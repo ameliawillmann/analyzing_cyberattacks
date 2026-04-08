@@ -1,15 +1,35 @@
-/* === Reset & Base === */
-* {
+/* === Variables === */
+:root {
+  --bg-main:       #0a0a0a;
+  --text-main:     #c5c5c5;
+  --text-headings: #e8e8e8;
+  --text-title:    #ffffff;
+  --text-muted:    #999999;
+  --link-color:    #8ec07c;
+  --link-hover:    #d3869b;
+  --border-subtle: #333333;
+  --nav-bg:        #0c0c0c;
+  --nav-border:    #333333;
+  --panel-bg:      #111111;
+  --mono-font:     'IBM Plex Mono', monospace;
+}
+
+/* === Reset === */
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   cursor: none !important;
   box-sizing: border-box;
-  font-family: "Playfair Display", serif;
+  font-family: var(--mono-font);
 }
 
 body {
-  min-height: 100vh;
-  background: #f8f8f8;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* === Custom Cursor === */
@@ -17,9 +37,9 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 12px;
-  height: 12px;
-  background: #1a1a2e;
+  width: 10px;
+  height: 10px;
+  background: var(--link-color);
   border-radius: 50%;
   pointer-events: none;
   z-index: 10000;
@@ -34,101 +54,121 @@ body {
   left: 0;
   width: 100%;
   display: flex;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.97);
-  border-bottom: 1px solid #ddd;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  padding: 0 1.5rem;
+  z-index: 9999;
 }
 
 .global-nav a {
-  padding: 16px 32px;
+  color: var(--text-muted);
   text-decoration: none;
-  color: #555;
-  font-size: 15px;
-  letter-spacing: 0.02em;
-  border-bottom: 3px solid transparent;
-  transition: color 0.2s, border-color 0.2s;
+  border-bottom: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  padding: 0.85rem 1.2rem;
+  transition: color 0.2s ease;
 }
 
 .global-nav a:hover {
-  color: #1a1a2e;
-  border-bottom: 3px solid #1a1a2e;
+  color: var(--text-main);
 }
 
 .global-nav a.active {
-  color: #1a1a2e;
-  font-weight: bold;
-  border-bottom: 3px solid #1a1a2e;
+  color: var(--text-title);
+  border-bottom: 2px solid var(--link-color);
 }
 
 /* === Page Layout === */
 .page-content {
-  max-width: 860px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 100px 40px 60px;
+  padding: 90px 40px 80px;
 }
 
 .page-title {
   font-size: 2rem;
-  color: #1a1a2e;
-  margin-bottom: 28px;
+  font-weight: normal;
+  color: var(--text-title);
+  margin-bottom: 2rem;
+  margin-top: 1rem;
 }
 
 /* === Content Blocks === */
 .content-block {
-  background: white;
-  border-radius: 8px;
-  padding: 28px 32px;
-  margin-bottom: 24px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  line-height: 1.7;
-  color: #333;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.content-block:last-child {
+  border-bottom: none;
+}
+
+.content-block h2 {
+  font-size: 1.1rem;
+  font-weight: normal;
+  color: var(--text-headings);
+  border-bottom: 1px dashed var(--border-subtle);
+  padding-bottom: 0.4em;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.04em;
 }
 
 .content-block p {
-  margin-bottom: 16px;
+  margin-bottom: 1.2rem;
+  color: var(--text-main);
 }
 
 .content-block p:last-child {
   margin-bottom: 0;
 }
 
-.content-block h2 {
-  font-size: 1.3rem;
-  color: #1a1a2e;
-  margin-bottom: 14px;
+/* === Links === */
+a {
+  color: var(--text-main);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link-color);
+  padding-bottom: 1px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+  border-bottom-color: var(--link-hover);
 }
 
 /* === Citations === */
 .cite {
-  color: #1a1a2e;
+  color: var(--link-color);
   text-decoration: none;
+  border-bottom: none;
   font-size: 0.8em;
   vertical-align: super;
   transition: color 0.2s;
 }
 
 .cite:hover {
-  color: #457b9d;
+  color: var(--link-hover);
 }
 
 /* === Sources Toggle === */
 .view-sources-btn {
-  background: #1a1a2e;
-  color: white;
-  border: none;
-  padding: 8px 18px;
-  border-radius: 5px;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  padding: 6px 14px;
   cursor: pointer;
-  font-family: "Playfair Display", serif;
-  font-size: 14px;
+  font-family: var(--mono-font);
+  font-size: 0.82rem;
   margin-top: 20px;
-  transition: background 0.2s;
+  letter-spacing: 0.05em;
+  transition: color 0.2s, border-color 0.2s;
 }
 
 .view-sources-btn:hover {
-  background: #457b9d;
+  color: var(--text-main);
+  border-color: var(--text-muted);
 }
 
 .footnotes-wrapper {
@@ -144,11 +184,11 @@ body {
 }
 
 .footnotes {
-  font-size: 0.88em;
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px solid #ddd;
-  color: #555;
+  font-size: 0.85em;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+  color: var(--text-muted);
 }
 
 .footnotes ol {
@@ -165,52 +205,54 @@ body {
   width: 100%;
   border-collapse: collapse;
   margin: 16px 0 24px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .rubric-table th {
-  background: #1a1a2e;
-  color: white;
-  padding: 12px 16px;
+  background: #161616;
+  color: var(--text-headings);
+  padding: 10px 14px;
   text-align: left;
   font-weight: normal;
+  border-bottom: 1px solid var(--border-subtle);
+  letter-spacing: 0.04em;
 }
 
 .rubric-table td {
-  padding: 10px 16px;
-  border-bottom: 1px solid #e0e0e0;
-  color: #444;
+  padding: 10px 14px;
+  border-bottom: 1px solid #1e1e1e;
+  color: var(--text-main);
   vertical-align: top;
 }
 
 .rubric-table tr:nth-child(even) td {
-  background: #f8f8f8;
+  background: #0d0d0d;
 }
 
 /* === Visualization Placeholder === */
 .viz-placeholder {
-  background: #f0f4f8;
-  border: 2px dashed #ccc;
-  border-radius: 8px;
+  background: #0d0d0d;
+  border: 1px dashed var(--border-subtle);
   padding: 60px 20px;
   text-align: center;
-  color: #888;
+  color: var(--text-muted);
   font-style: italic;
+  font-size: 0.9rem;
   margin: 16px 0;
 }
 
-/* === Attack Meta (used inside timeline panel) === */
+/* === Attack Meta (inside timeline panel) === */
 .attack-meta {
-  background: #f0f4f8;
-  border-left: 4px solid #1a1a2e;
-  padding: 14px 18px;
-  border-radius: 0 6px 6px 0;
+  background: #141414;
+  border-left: 3px solid var(--link-color);
+  padding: 12px 16px;
   margin: 16px 0 20px;
 }
 
 .attack-meta p {
-  margin-bottom: 6px;
-  font-size: 0.92rem;
+  margin-bottom: 5px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
   line-height: 1.5;
 }
 
@@ -218,21 +260,8 @@ body {
   margin-bottom: 0;
 }
 
-/* === Learn More Link (Further Reading page) === */
-.learn-more-btn {
-  display: inline-block;
-  background: #1a1a2e;
-  color: white;
-  padding: 10px 24px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 15px;
-  margin-top: 16px;
-  transition: background 0.2s;
-}
-
-.learn-more-btn:hover {
-  background: #457b9d;
+.attack-meta strong {
+  color: var(--text-headings);
 }
 
 /* === Resource List (Further Reading page) === */
@@ -244,7 +273,7 @@ body {
 
 .resource-list li {
   padding: 10px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #1a1a1a;
 }
 
 .resource-list li:last-child {
@@ -252,13 +281,42 @@ body {
 }
 
 .resource-list a {
-  color: #1a1a2e;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: color 0.2s;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  border-bottom: 1px dotted var(--link-color);
 }
 
 .resource-list a:hover {
-  color: #457b9d;
-  text-decoration: underline;
+  color: var(--link-hover);
+}
+
+/* === Learn More Button === */
+.learn-more-btn {
+  display: inline-block;
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  padding: 8px 20px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  margin-top: 16px;
+  letter-spacing: 0.05em;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.learn-more-btn:hover {
+  color: var(--text-main);
+  border-color: var(--text-muted);
+  border-bottom: 1px solid var(--text-muted);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .page-content {
+    padding: 80px 20px 60px;
+  }
+
+  .global-nav a {
+    padding: 0.75rem 0.7rem;
+    font-size: 0.8rem;
+  }
 }
