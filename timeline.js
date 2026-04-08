@@ -302,7 +302,7 @@ document.addEventListener("DOMContentLoaded", function () {
       timelinePoints.forEach(p => p.classList.remove('selected'));
       this.classList.add('selected');
       timelinePointSelected = true;
-      this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      this.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
 
       infoBox.style.display = "none";
 
@@ -393,10 +393,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // === FUNCTION: Position hover tooltip ===
   function updateInfoBoxPosition(point) {
     let rect = point.getBoundingClientRect();
-    let boxWidth = infoBox.offsetWidth || 150;
+    let boxWidth = infoBox.offsetWidth || 200;
 
-    let leftPosition = rect.left + window.scrollX - boxWidth - 20;
-    let topPosition  = rect.top + window.scrollY + rect.height / 2 - infoBox.offsetHeight / 2;
+    // Center above the point
+    let leftPosition = rect.left + window.scrollX + rect.width / 2 - boxWidth / 2;
+    let topPosition  = rect.top + window.scrollY - infoBox.offsetHeight - 14;
 
     infoBox.style.left = `${leftPosition}px`;
     infoBox.style.top  = `${topPosition}px`;
