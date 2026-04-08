@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Major Cyberattacks — Timeline</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="timeline.css">
+
+  <script src="script.js" defer></script>
+  <script src="timeline.js" defer></script>
+</head>
+
+<body>
+
+  <div id="customCursor"></div>
+
+  <nav class="global-nav">
+    <a href="index.html">Background</a>
+    <a href="criteria.html">Criteria</a>
+    <a href="timeline.html" class="active">Timeline</a>
+    <a href="further-reading.html">Further Reading</a>
+  </nav>
+
+  <!-- Hover Tooltip -->
+  <div id="timeline-info-box" class="hidden"></div>
+
+  <!-- Timeline -->
+  <div class="timeline" id="timeline">
+    <div class="timeline-point" data-title="2000 — ILOVEYOU Worm"            style="--color:#c0392b" id="point1"></div>
+    <div class="timeline-point" data-title="2003 — SQL Slammer"               style="--color:#e67e22" id="point2"></div>
+    <div class="timeline-point" data-title="2007 — Estonia DDoS Attacks"      style="--color:#2980b9" id="point3"></div>
+    <div class="timeline-point" data-title="2010 — Stuxnet"                   style="--color:#27ae60" id="point4"></div>
+    <div class="timeline-point" data-title="2013 — Target Data Breach"        style="--color:#8e44ad" id="point5"></div>
+    <div class="timeline-point" data-title="2015 — Ukrainian Power Grid"      style="--color:#2c3e50" id="point6"></div>
+    <div class="timeline-point" data-title="2017 — WannaCry"                  style="--color:#e74c3c" id="point7"></div>
+    <div class="timeline-point" data-title="2020 — SolarWinds (SUNBURST)"     style="--color:#16a085" id="point8"></div>
+    <div class="timeline-point" data-title="2021 — Colonial Pipeline"         style="--color:#d35400" id="point9"></div>
+    <div class="timeline-point" data-title="2024 — Change Healthcare"         style="--color:#6c5ce7" id="point10"></div>
+  </div>
+
+  <!-- Sliding Detail Panel -->
+  <div id="mini-page">
+    <button class="close-btn">&times;</button>
+    <div class="mini-header">
+      <h2 id="mini-title">Title</h2>
+    </div>
+    <div id="mini-content"></div>
+  </div>
+
+  <!-- Background Video -->
+  <video id="background-video" autoplay muted loop playsinline></video>
+
+  <!-- Color Overlay -->
+  <div id="color-overlay"></div>
+
+</body>
+</html>

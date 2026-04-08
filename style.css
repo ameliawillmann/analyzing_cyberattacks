@@ -1,0 +1,264 @@
+/* === Reset & Base === */
+* {
+  margin: 0;
+  padding: 0;
+  cursor: none !important;
+  box-sizing: border-box;
+  font-family: "Playfair Display", serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #f8f8f8;
+}
+
+/* === Custom Cursor === */
+#customCursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background: #1a1a2e;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+}
+
+/* === Global Navigation === */
+.global-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.global-nav a {
+  padding: 16px 32px;
+  text-decoration: none;
+  color: #555;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.global-nav a:hover {
+  color: #1a1a2e;
+  border-bottom: 3px solid #1a1a2e;
+}
+
+.global-nav a.active {
+  color: #1a1a2e;
+  font-weight: bold;
+  border-bottom: 3px solid #1a1a2e;
+}
+
+/* === Page Layout === */
+.page-content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 100px 40px 60px;
+}
+
+.page-title {
+  font-size: 2rem;
+  color: #1a1a2e;
+  margin-bottom: 28px;
+}
+
+/* === Content Blocks === */
+.content-block {
+  background: white;
+  border-radius: 8px;
+  padding: 28px 32px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  line-height: 1.7;
+  color: #333;
+}
+
+.content-block p {
+  margin-bottom: 16px;
+}
+
+.content-block p:last-child {
+  margin-bottom: 0;
+}
+
+.content-block h2 {
+  font-size: 1.3rem;
+  color: #1a1a2e;
+  margin-bottom: 14px;
+}
+
+/* === Citations === */
+.cite {
+  color: #1a1a2e;
+  text-decoration: none;
+  font-size: 0.8em;
+  vertical-align: super;
+  transition: color 0.2s;
+}
+
+.cite:hover {
+  color: #457b9d;
+}
+
+/* === Sources Toggle === */
+.view-sources-btn {
+  background: #1a1a2e;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Playfair Display", serif;
+  font-size: 14px;
+  margin-top: 20px;
+  transition: background 0.2s;
+}
+
+.view-sources-btn:hover {
+  background: #457b9d;
+}
+
+.footnotes-wrapper {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.footnotes-wrapper.open {
+  max-height: 600px;
+  opacity: 1;
+}
+
+.footnotes {
+  font-size: 0.88em;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #ddd;
+  color: #555;
+}
+
+.footnotes ol {
+  padding-left: 20px;
+}
+
+.footnotes li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* === Rubric Table (Criteria page) === */
+.rubric-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 24px;
+  font-size: 0.9rem;
+}
+
+.rubric-table th {
+  background: #1a1a2e;
+  color: white;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: normal;
+}
+
+.rubric-table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #444;
+  vertical-align: top;
+}
+
+.rubric-table tr:nth-child(even) td {
+  background: #f8f8f8;
+}
+
+/* === Visualization Placeholder === */
+.viz-placeholder {
+  background: #f0f4f8;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 60px 20px;
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  margin: 16px 0;
+}
+
+/* === Attack Meta (used inside timeline panel) === */
+.attack-meta {
+  background: #f0f4f8;
+  border-left: 4px solid #1a1a2e;
+  padding: 14px 18px;
+  border-radius: 0 6px 6px 0;
+  margin: 16px 0 20px;
+}
+
+.attack-meta p {
+  margin-bottom: 6px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.attack-meta p:last-child {
+  margin-bottom: 0;
+}
+
+/* === Learn More Link (Further Reading page) === */
+.learn-more-btn {
+  display: inline-block;
+  background: #1a1a2e;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 15px;
+  margin-top: 16px;
+  transition: background 0.2s;
+}
+
+.learn-more-btn:hover {
+  background: #457b9d;
+}
+
+/* === Resource List (Further Reading page) === */
+.resource-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+}
+
+.resource-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.resource-list li:last-child {
+  border-bottom: none;
+}
+
+.resource-list a {
+  color: #1a1a2e;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.resource-list a:hover {
+  color: #457b9d;
+  text-decoration: underline;
+}
