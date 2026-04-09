@@ -42,92 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const content = {
 
     point1: `
-      <h3>On May 5, 2000, a single email attachment set a record — 50 million computers infected in ten days.</h3>
-      <div class="attack-meta">
-        <p><strong>Actors:</strong> Onel de Guzman (Philippines) — never charged due to absence of a cybercrime law</p>
-        <p><strong>Type:</strong> Email worm / Social engineering</p>
-        <p><strong>Impact:</strong> ~50 million infections; ~$10 billion in damages; hit the Pentagon, CIA, and UK Parliament</p>
-      </div>
-      <p>The ILOVEYOU worm arrived as an attachment titled "LOVE-LETTER-FOR-YOU.txt.vbs." Windows hid the .vbs extension by default, so recipients believed they were opening a text file. Once executed, the script overwrote image and audio files, added itself to system startup, then forwarded itself to every contact in the victim's Outlook address book — an early example of email-based mass propagation.</p>
-      <p>The attack exploited human psychology more than any technical flaw. Curiosity and desire drove the spread. This was the event that forced organizations to reconsider open email attachment policies and pushed antivirus signature-update cycles from days to hours.</p>
-      <p>The Philippine legislature passed the E-Commerce Law of 2000 shortly after — one of the first cybercrime statutes in Asia — directly in response to this attack. The case exposed a critical global gap: malware could cross borders in seconds, but legal jurisdiction could not.</p>
-      <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
-      <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
-        <li>Bridis, T. (2000). "Love Bug Virus Suspect Identified." <em>Associated Press.</em></li>
-        <li>Noughton, J. (2020). "ILOVEYOU: 20 Years On." <em>The Guardian.</em></li>
-      </ol></div></div>
-    `,
-
-    point2: `
-      <h3>At 5:30 AM on January 25, 2003, a 376-byte worm paralyzed the internet — doubling in size every 8.5 seconds.</h3>
-      <div class="attack-meta">
-        <p><strong>Actors:</strong> Unknown — exploited a publicly disclosed, patchable vulnerability</p>
-        <p><strong>Type:</strong> Network worm (buffer overflow in Microsoft SQL Server 2000)</p>
-        <p><strong>Impact:</strong> 75,000 hosts infected in 10 minutes; Bank of America ATMs offline; 911 systems disrupted in Washington State; South Korea's internet nearly collapsed</p>
-      </div>
-      <p>SQL Slammer exploited a buffer overflow vulnerability in Microsoft SQL Server 2000 that had been publicly disclosed — and patched — six months earlier. A single UDP packet could crash a vulnerable server. The worm generated random IP addresses and sent itself continuously, quickly saturating network bandwidth worldwide.</p>
-      <p>At its peak, Slammer was sending approximately 55 million scans per second. The resulting congestion disrupted Continental Airlines' flight check-in systems, took down five of thirteen internet root DNS servers, and caused Ohio's Davis-Besse nuclear plant to lose safety monitoring systems for five hours.</p>
-      <p>SQL Slammer's core lesson: a six-month-old patch would have stopped it entirely. It made patch management — not just firewalls — a fundamental security control.</p>
-      <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
-      <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
-        <li>Moore, D., et al. (2003). "Inside the Slammer Worm." <em>IEEE Security &amp; Privacy</em>, 1(4), 33–39.</li>
-        <li>Lemos, R. (2003). "SQL Slammer Worm Crashes Internet Backbone." <em>CNET News.</em></li>
-      </ol></div></div>
-    `,
-
-    point3: `
-      <h3>In April 2007, Estonia became the first country to have its national digital infrastructure shut down by a coordinated cyberattack.</h3>
-      <div class="attack-meta">
-        <p><strong>Actors:</strong> Russian-speaking hacktivists; Russian government involvement alleged but not prosecuted</p>
-        <p><strong>Type:</strong> Distributed Denial of Service (DDoS) — three waves over three weeks</p>
-        <p><strong>Impact:</strong> Government, banking, and media websites offline for days; NATO deployed its first cyber defense team in response</p>
-      </div>
-      <p>The trigger was Estonia's decision to relocate the Bronze Soldier — a Soviet-era war memorial — from central Tallinn. Russian-speaking citizens rioted; simultaneously, DDoS attacks began targeting Estonian government websites, banks, and newspapers. At the time, Estonia was one of the most digitally connected countries in the world — voting, banking, and government services all ran online.</p>
-      <p>Botnets of up to 85,000 compromised computers flooded Estonian servers. Banks had to cut off international access to prevent collapse. The parliament, prime minister's office, and foreign ministry all went offline. It was the first time a sustained cyberattack had targeted an entire nation-state's digital infrastructure.</p>
-      <p>NATO established the Cooperative Cyber Defence Centre of Excellence (CCDCOE) in Tallinn the following year. The Tallinn Manual — the authoritative document on how international law applies to cyberspace — grew directly out of this event.</p>
-      <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
-      <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
-        <li>Davis, J. (2007). "Hackers Take Down the Most Wired Country in Europe." <em>Wired.</em></li>
-        <li>Schmitt, M. (Ed.) (2013). <em>Tallinn Manual on the International Law Applicable to Cyber Warfare.</em> Cambridge University Press.</li>
-      </ol></div></div>
-    `,
-
-    point4: `
-      <h3>Stuxnet was the world's first cyberweapon — code designed not to steal data, but to physically destroy a machine.</h3>
-      <div class="attack-meta">
-        <p><strong>Actors:</strong> US (NSA/CIA) and Israel (Unit 8200) — Operation Olympic Games</p>
-        <p><strong>Type:</strong> Advanced Persistent Threat (APT) / Industrial sabotage targeting Siemens PLCs</p>
-        <p><strong>Impact:</strong> ~1,000 Iranian centrifuges destroyed; Iran's uranium enrichment delayed by an estimated 1–2 years</p>
-      </div>
-      <p>Stuxnet was discovered in 2010 but had likely been active since 2007–2009. It spread via infected USB drives and exploited four zero-day vulnerabilities simultaneously — an unprecedented number at the time. Once inside a network, it specifically targeted Siemens Step 7 software controlling PLCs at Iran's Natanz nuclear enrichment facility.</p>
-      <p>The worm caused centrifuges to spin at incorrect speeds while reporting normal operations to operators. Centrifuges failed at an unusual rate. Iranian engineers couldn't determine why. Stuxnet was designed to destroy equipment while making the damage look like mechanical failure, not sabotage.</p>
-      <p>Stuxnet permanently changed the threat landscape. It proved digital attacks could cause physical damage to critical infrastructure — and set a precedent: once the US used cyber operations as a covert tool of statecraft, it became harder to argue other nations shouldn't do the same.</p>
-      <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
-      <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
-        <li>Langner, R. (2011). "Stuxnet: Dissecting a Cyberwarfare Weapon." <em>IEEE Security &amp; Privacy</em>, 9(3), 49–51.</li>
-        <li>Sanger, D. (2012). "Obama Order Sped Up Wave of Cyberattacks Against Iran." <em>New York Times.</em></li>
-        <li>Zetter, K. (2014). <em>Countdown to Zero Day.</em> Crown.</li>
-      </ol></div></div>
-    `,
-
-    point5: `
-      <h3>The 2013 Target breach didn't start with Target — it started with a small HVAC company in Pennsylvania.</h3>
-      <div class="attack-meta">
-        <p><strong>Actors:</strong> Eastern European cybercriminals (linked to the Rescator carding forum)</p>
-        <p><strong>Type:</strong> Supply chain compromise → point-of-sale malware (BlackPOS)</p>
-        <p><strong>Impact:</strong> 40 million credit card numbers stolen; 70 million customer records exposed; Target losses exceeded $300 million; CEO and CIO resigned</p>
-      </div>
-      <p>Attackers first compromised Fazio Mechanical, an HVAC contractor with remote access to Target's network for billing and project management. Using stolen credentials, they pivoted into Target's internal network and installed BlackPOS malware on point-of-sale terminals across 1,800 stores. The malware captured card data in real time from November 27 through December 15, 2013 — peak holiday shopping season.</p>
-      <p>Target's $1.6 million FireEye intrusion detection system flagged the malware and sent alerts to the security operations center in Bangalore and Minneapolis. The alerts were reviewed but not acted on. The breach wasn't discovered until the US Department of Justice notified Target in mid-December.</p>
-      <p>The fallout changed corporate security culture. It accelerated the US transition to chip-and-PIN (EMV) credit cards and established third-party vendor risk management as a boardroom issue, not just an IT concern.</p>
-      <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
-      <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
-        <li>Riley, M., et al. (2014). "Missed Alarms and 40 Million Stolen Credit Card Numbers." <em>Bloomberg Businessweek.</em></li>
-        <li>Senate Commerce Committee. (2014). <em>A "Kill Chain" Analysis of the 2013 Target Data Breach.</em></li>
-      </ol></div></div>
-    `,
-
-    point6: `
       <h3>On December 23, 2015, 230,000 Ukrainians lost power — the first confirmed cyberattack to cause a blackout.</h3>
       <div class="attack-meta">
         <p><strong>Actors:</strong> Sandworm Team (attributed to Russian GRU Unit 74455)</p>
@@ -136,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
       <p>The attack began months earlier with spear-phishing emails sent to energy company employees. Malicious Word documents containing BlackEnergy malware gave attackers persistent access. For months they silently mapped operational technology (OT) systems — studying the SCADA controls that ran the physical power grid.</p>
       <p>On December 23, attackers struck simultaneously across three companies. They took over SCADA workstations, opened breakers to cut power, deployed KillDisk to wipe and brick infected systems, and flooded customer service lines with fake calls. Operators watched their cursors move on their own screens, locked out and unable to respond.</p>
-      <p>This attack proved that power grids — not just corporate IT networks — could be brought down remotely. A second, more sophisticated attack hit Ukraine's grid in December 2016. The same group, Sandworm, later deployed NotPetya in 2017, the most destructive cyberattack in history.</p>
+      <p>This attack proved that power grids — not just corporate IT networks — could be brought down remotely. A second, more sophisticated attack hit Ukraine's grid in December 2016. The same group, Sandworm, later deployed NotPetya in 2017, causing an estimated $10 billion in global damage.</p>
       <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
       <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
         <li>Zetter, K. (2016). "Inside the Cunning, Unprecedented Hack of Ukraine's Power Grid." <em>Wired.</em></li>
@@ -145,92 +59,128 @@ document.addEventListener("DOMContentLoaded", function () {
       </ol></div></div>
     `,
 
-    point7: `
-      <h3>In May 2017, WannaCry spread to 200,000 computers across 150 countries in a single day — without a single user clicking anything.</h3>
+    point2: `
+      <h3>For over a decade, Russian state-sponsored groups have quietly embedded themselves in US critical infrastructure — not to destroy it yet, but to be ready.</h3>
       <div class="attack-meta">
-        <p><strong>Actors:</strong> Lazarus Group (attributed to North Korea's Reconnaissance General Bureau)</p>
-        <p><strong>Type:</strong> Self-propagating ransomware cryptoworm using the NSA's EternalBlue exploit</p>
-        <p><strong>Impact:</strong> UK NHS crippled — 19,000 appointments cancelled; global damages estimated at $4–8 billion</p>
+        <p><strong>Actors:</strong> Sandworm (GRU), Fancy Bear (GRU APT28), Volt Typhoon (PRC — also active in US infrastructure)</p>
+        <p><strong>Type:</strong> Long-term persistent access campaigns targeting energy, water, and transportation sectors</p>
+        <p><strong>Impact:</strong> Confirmed access to US grid control systems; CISA has issued repeated warnings since 2018</p>
       </div>
-      <p>WannaCry used EternalBlue, an exploit developed by the NSA and leaked by the Shadow Brokers in April 2017 — five weeks before the attack. EternalBlue targeted a critical vulnerability in Windows SMB (file sharing). Microsoft had issued a patch (MS17-010) in March, but millions of systems — especially in healthcare and legacy enterprise environments — hadn't updated.</p>
-      <p>Unlike typical ransomware, WannaCry required no user interaction. It scanned the internet for vulnerable machines and infected them automatically. The UK's National Health Service was hit hardest: 80 of 236 hospital trusts were affected, operations were cancelled, and ambulances were diverted. The estimated NHS cost was £92 million.</p>
-      <p>A 22-year-old British researcher, Marcus Hutchins, discovered a kill switch embedded in the code — registering an unregistered domain halted propagation. His accidental discovery slowed the outbreak. WannaCry remains active today: unpatched systems still encounter it.</p>
+      <p>In 2018, the Department of Homeland Security and FBI jointly confirmed that Russian government actors had been conducting a multi-stage intrusion campaign against US energy, nuclear, water, aviation, and manufacturing sectors since at least 2016. Attackers used spear-phishing and watering-hole attacks to compromise trusted third-party vendors, then pivoted into operational technology networks.</p>
+      <p>In some cases, attackers reached the point where they could have caused disruptions — they had hands on the switches. A 2019 report from the Government Accountability Office found that the Department of Energy had not fully addressed known cybersecurity risks to the grid's distribution systems. CISA's 2022 advisory on Russian state-sponsored cyber threats listed energy infrastructure as a primary target.</p>
+      <p>The strategic logic is not immediate destruction but deterrence and leverage: the ability to shut down infrastructure during a geopolitical crisis. Security researchers call this "pre-positioning." The threat is ongoing — and the gap between access and action is narrower than most public reporting acknowledges.</p>
       <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
       <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
-        <li>NHS Digital. (2018). <em>Investigation: WannaCry Cyber Attack and the NHS.</em></li>
-        <li>US Department of Justice. (2018). "North Korean Regime-Backed Programmer Charged." Press Release.</li>
-        <li>Hutchins, M. (2017). "How I Accidentally Stopped a Global Cyberattack." <em>MalwareTech Blog.</em></li>
+        <li>CISA &amp; FBI. (2018). <em>Alert TA18-074A: Russian Government Cyber Activity Targeting Energy and Other Critical Infrastructure Sectors.</em></li>
+        <li>GAO. (2019). <em>Electricity Grid Cybersecurity: DOE Needs to Ensure Its Plans Fully Address Risks to Distribution Systems.</em> GAO-19-332.</li>
+        <li>CISA. (2022). <em>Alert AA22-011A: Understanding and Mitigating Russian State-Sponsored Cyber Threats to US Critical Infrastructure.</em></li>
       </ol></div></div>
+    `,
+
+    point3: `
+      <h3>In November 2023, hackers breached 22 Danish energy companies in a single coordinated wave — the largest cyberattack ever recorded against Danish critical infrastructure.</h3>
+      <div class="attack-meta">
+        <p><strong>Actors:</strong> Initially linked to Sandworm (Russian GRU); a second wave used infrastructure tied to the Fancy Bear group</p>
+        <p><strong>Type:</strong> Exploitation of a firewall vulnerability (Zyxel CVE-2023-28771) → access to industrial control systems</p>
+        <p><strong>Impact:</strong> 22 companies compromised; some forced to operate in island mode, disconnected from the national grid</p>
+      </div>
+      <p>The attacks unfolded in two distinct waves. In the first wave during May 2023, attackers exploited a critical vulnerability in Zyxel firewalls used by Danish energy operators. The flaw had been disclosed and patched — but 22 companies had not applied the update. Attackers moved quickly from firewall access into operational technology systems controlling physical energy infrastructure.</p>
+      <p>SektorCERT, Denmark's cybersecurity organization for critical infrastructure, detected the intrusions and coordinated the response. Several companies had to operate in "island mode" — isolated from the interconnected European power grid — to contain the breach. A second wave in late May used different attack infrastructure with no clear attribution tie to the first.</p>
+      <p>The report from SektorCERT drew attention to a persistent problem across critical infrastructure globally: known vulnerabilities sitting unpatched in systems that operators are reluctant to update because downtime carries its own risks. The Danish attack was a direct warning to European energy operators about the consequences.</p>
+      <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
+      <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
+        <li>SektorCERT. (2023). <em>The Attack Against Danish Critical Infrastructure.</em></li>
+        <li>Greenberg, A. (2023). "Hackers Hit 22 Danish Energy Firms in Largest Attack on That Country's Critical Infrastructure." <em>Wired.</em></li>
+        <li>CISA. (2023). <em>Advisory: Zyxel Firewalls Exploited by Threat Actors.</em></li>
+      </ol></div></div>
+    `,
+
+    point4: `
+      <h3>Between 2022 and the present, Microsoft has been breached multiple times by sophisticated state-sponsored actors — exposing US government email, source code, and internal systems.</h3>
+      <div class="attack-meta">
+        <p><strong>Actors:</strong> Lapsus$ (2022); Storm-0558 / Chinese MSS (2023); Midnight Blizzard / Russian SVR (2024)</p>
+        <p><strong>Type:</strong> Social engineering, forged authentication tokens, password spraying, lateral movement</p>
+        <p><strong>Impact:</strong> US government email accounts accessed; Microsoft source code and internal systems exfiltrated; ongoing remediation as of 2024</p>
+      </div>
+      <p>In early 2022, the Lapsus$ extortion group compromised Microsoft using social engineering, accessing internal systems and leaking source code for Bing and Cortana. Later that year, Microsoft disclosed that the group had also briefly accessed a customer support agent's account.</p>
+      <p>In 2023, Storm-0558 — a Chinese espionage group — forged authentication tokens using a stolen Microsoft account signing key, gaining access to email accounts at 25 organizations including the US State Department and Department of Commerce. The breach went undetected for a month. A CSRB review found Microsoft's security culture "inadequate."</p>
+      <p>In January 2024, Microsoft disclosed that Midnight Blizzard (Russia's SVR, the same group behind SolarWinds) had accessed senior Microsoft executives' email accounts and exfiltrated source code repositories. The attack began in November 2023 via a password spray on a test account with no multi-factor authentication. Microsoft acknowledged in March 2024 that the intrusion was ongoing and worsening.</p>
+      <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
+      <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
+        <li>CSRB. (2023). <em>Review of the Summer 2023 Microsoft Exchange Online Intrusion.</em> Department of Homeland Security.</li>
+        <li>Microsoft. (2024). "Microsoft Actions Following Attack by Nation State Actor Midnight Blizzard." <em>Microsoft Security Blog.</em></li>
+        <li>Sanger, D. (2024). "Chinese Hackers Breached More US Agencies Than Previously Known." <em>New York Times.</em></li>
+      </ol></div></div>
+    `,
+
+    point5: `
+      <h3>In January 2025, Chinese state-sponsored hackers intensified a sustained campaign against Taiwan's government networks, targeting ministries, infrastructure operators, and defense-adjacent agencies.</h3>
+      <div class="attack-meta">
+        <p><strong>Actors:</strong> APT40 / Brass Typhoon (Chinese MSS); additional PRC-linked groups</p>
+        <p><strong>Type:</strong> Spear-phishing, supply chain compromise, exploitation of public-facing services</p>
+        <p><strong>Impact:</strong> Government ministries, telecommunications providers, and research institutions compromised; espionage and pre-positioning for potential conflict</p>
+      </div>
+      <p>Taiwan has been a persistent target of Chinese cyber operations for years, but January 2025 saw a notable escalation in both volume and sophistication. Taiwanese authorities reported a sharp increase in intrusion attempts against government systems, attributing the campaign to multiple PRC-linked threat actors operating in coordination.</p>
+      <p>The attacks targeted ministries responsible for cross-strait relations, defense procurement, and critical infrastructure management. Tactics included spear-phishing emails impersonating legitimate government communications, exploitation of vulnerabilities in internet-facing systems, and supply chain compromise through trusted software vendors — mirroring the SolarWinds playbook.</p>
+      <p>The campaign reflects a broader strategic pattern: China has been systematically pre-positioning in the networks of Taiwan and its allies, building the capability to disrupt communications, supply chains, and decision-making in the event of a military confrontation. Taiwan's Cybersecurity Institute described the January 2025 activity as the most coordinated intrusion campaign it had observed in over a decade.</p>
+      <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
+      <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
+        <li>Taiwan Ministry of Digital Affairs. (2025). <em>Annual Cybersecurity Threat Report.</em></li>
+        <li>Mandiant / Google Threat Intelligence. (2025). <em>APT40 Activity Report: Taiwan Targeting.</em></li>
+        <li>CISA. (2024). <em>Advisory AA24-190A: PRC State-Sponsored Actors Compromise and Maintain Persistent Access to US Critical Infrastructure.</em></li>
+      </ol></div></div>
+    `,
+
+    point6: `
+      <h3>On April 28, 2025, a massive power failure swept across Spain and Portugal — tens of millions without electricity, and questions about whether it was a cyberattack.</h3>
+      <div class="attack-meta">
+        <p><strong>Actors:</strong> Under investigation — no confirmed attribution as of mid-2025</p>
+        <p><strong>Type:</strong> Grid failure — cause disputed between rare atmospheric oscillation, equipment failure, and possible cyber interference</p>
+        <p><strong>Impact:</strong> ~55 million people affected across the Iberian Peninsula; transport systems, hospitals, and communications disrupted for hours</p>
+      </div>
+      <p>At approximately 12:33 PM local time on April 28, 2025, electricity disappeared across Spain and Portugal in a matter of seconds. The blackout was one of the largest in European history, affecting 55 million people. Trains stopped mid-route. Airports switched to emergency power. Hospitals activated backup generators. ATMs went dark. Traffic lights failed across major cities.</p>
+      <p>Spanish grid operator Red Eléctrica initially cited a "rare atmospheric oscillation phenomenon" that caused a rapid oscillation in electrical flow, triggering automatic protective shutdowns across the interconnected European grid. However, cybersecurity researchers and government officials raised questions. Portugal's Prime Minister noted the cause had not been definitively ruled out as cyber-related. Spain's National Cryptology Centre (CCN-CERT) opened an investigation.</p>
+      <p>Whether deliberate or not, the blackout exposed how rapidly a single cascading failure in interconnected infrastructure can paralyze an entire region — and how difficult it is, in the immediate aftermath, to distinguish a cyberattack from a technical failure. Investigations remain ongoing.</p>
+      <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
+      <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
+        <li>Red Eléctrica de España. (2025). "Comunicado sobre el incidente en el sistema eléctrico peninsular."</li>
+        <li>Picheta, R. (2025). "Spain and Portugal hit by massive power outage." <em>CNN.</em></li>
+        <li>CCN-CERT. (2025). <em>Investigación del incidente eléctrico del 28 de abril de 2025.</em></li>
+      </ol></div></div>
+    `,
+
+    point7: `
+      <h3>Loading ...</h3>
+      <div class="attack-meta">
+        <p><strong>Actors:</strong> TBD</p>
+        <p><strong>Type:</strong> TBD</p>
+        <p><strong>Impact:</strong> TBD</p>
+      </div>
+      <p>More information coming soon — research in progress.</p>
     `,
 
     point8: `
-      <h3>The SolarWinds attack wasn't a hack — it was a hijacking. Attackers turned a trusted software update into a backdoor into the US government.</h3>
+      <h3>Loading ...</h3>
       <div class="attack-meta">
-        <p><strong>Actors:</strong> APT29 / Cozy Bear (attributed to Russia's SVR Foreign Intelligence Service)</p>
-        <p><strong>Type:</strong> Supply chain compromise — SUNBURST backdoor injected into SolarWinds Orion software updates</p>
-        <p><strong>Impact:</strong> 18,000 organizations received the malicious update; 9 US federal agencies breached including Treasury, Commerce, DHS, DOJ, and the NSA</p>
+        <p><strong>Actors:</strong> TBD</p>
+        <p><strong>Type:</strong> TBD</p>
+        <p><strong>Impact:</strong> TBD</p>
       </div>
-      <p>Attackers compromised SolarWinds' software build environment by October 2019 and inserted SUNBURST — a sophisticated backdoor — into routine Orion updates. Between March and June 2020, 18,000 customers downloaded the infected update. Once installed, SUNBURST lay dormant for up to two weeks before activating, mimicking legitimate traffic to avoid detection.</p>
-      <p>FireEye discovered the breach in December 2020 while investigating a theft of its own red team tools. The scope was staggering: Microsoft, Intel, Cisco, and VMware were all compromised alongside nine federal agencies. Attackers had been inside some networks for over nine months, reading emails and exfiltrating sensitive documents.</p>
-      <p>SolarWinds redefined supply chain security as a national security issue. It proved that even organizations with strong internal security could be compromised through trusted third-party software. The incident directly prompted Executive Order 14028 on Improving the Nation's Cybersecurity in 2021.</p>
-      <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
-      <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
-        <li>FireEye. (2020). "Highly Evasive Attacker Leverages SolarWinds Supply Chain." <em>FireEye Blog.</em></li>
-        <li>CISA. (2020). <em>Emergency Directive 21-01: Mitigate SolarWinds Orion Code Compromise.</em></li>
-        <li>Sanger, D., &amp; Perlroth, N. (2020). "As Understanding of Russian Hack Grows, So Does Alarm." <em>New York Times.</em></li>
-      </ol></div></div>
-    `,
-
-    point9: `
-      <h3>On May 7, 2021, one compromised password shut down the largest fuel pipeline in the United States.</h3>
-      <div class="attack-meta">
-        <p><strong>Actors:</strong> DarkSide ransomware-as-a-service (RaaS) group — Russia-based affiliates</p>
-        <p><strong>Type:</strong> Ransomware — initial access via stolen VPN credentials on an account with no multi-factor authentication</p>
-        <p><strong>Impact:</strong> 5,500-mile pipeline offline for 6 days; fuel shortages across the Southeast US; Colonial paid $4.4 million ransom</p>
-      </div>
-      <p>Attackers gained access using a single compromised password for a legacy VPN account that lacked multi-factor authentication. Within hours, DarkSide had exfiltrated approximately 100 GB of data and deployed ransomware to Colonial's IT network. Colonial proactively shut down its operational technology (OT) pipeline systems to prevent further spread — a decision that caused immediate fuel shortages across the East Coast.</p>
-      <p>Gas stations ran out of fuel. Airlines scrambled for reserves. The US Department of Transportation issued emergency waivers to allow fuel transport by road. President Biden declared a state of emergency. Colonial paid $4.4 million in Bitcoin within hours. The FBI later recovered approximately $2.3 million by seizing the attacker's cryptocurrency wallet.</p>
-      <p>DarkSide stated they were financially motivated, not geopolitical — they hadn't intended to create a societal crisis. The incident nonetheless exposed how ransomware groups could accidentally destabilize critical infrastructure. DarkSide shut down shortly after, under pressure from the US government and Russian criminal networks who feared the attention.</p>
-      <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
-      <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
-        <li>CISA &amp; FBI. (2021). <em>Alert AA21-131A: DarkSide Ransomware.</em></li>
-        <li>Turton, W., &amp; Mehrotra, K. (2021). "Hackers Breached Colonial Pipeline Using Compromised Password." <em>Bloomberg.</em></li>
-        <li>DOJ. (2021). "Department of Justice Seizes $2.3 Million in Cryptocurrency Paid to Ransomware Extortionists." Press Release.</li>
-      </ol></div></div>
-    `,
-
-    point10: `
-      <h3>The Change Healthcare attack disrupted prescription processing for 1 in 3 Americans — the most damaging cyberattack on US healthcare ever recorded.</h3>
-      <div class="attack-meta">
-        <p><strong>Actors:</strong> ALPHV/BlackCat ransomware group (Russia-based); RansomHub subsequently claimed additional data</p>
-        <p><strong>Type:</strong> Ransomware — initial access via stolen Citrix credentials with no multi-factor authentication</p>
-        <p><strong>Impact:</strong> 22-day outage; 100M+ Americans' data exposed; UnitedHealth paid $22 million ransom; estimated $870M+ in losses</p>
-      </div>
-      <p>Change Healthcare, a UnitedHealth Group subsidiary, processes 15 billion medical transactions annually — roughly 40% of all US insurance claims. On February 21, 2024, ALPHV/BlackCat used stolen credentials to access Change's Citrix remote desktop portal, which lacked multi-factor authentication. Attackers spent nine days on the network before deploying ransomware.</p>
-      <p>Pharmacies couldn't verify insurance or process prescriptions. Hospitals couldn't submit claims or receive payments. Small medical practices faced existential cash-flow crises. The American Hospital Association estimated hospitals were losing $1 billion per day. UnitedHealth provided emergency advance payments to stave off collapse — then paid $22 million in ransom. ALPHV subsequently exit-scammed its own affiliates, keeping the payment.</p>
-      <p>The incident prompted congressional hearings on healthcare cybersecurity, exposed the systemic risk of industry consolidation (a single vendor controlling 40% of claims processing), and revived calls for mandatory minimum cybersecurity standards in the healthcare sector.</p>
-      <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
-      <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
-        <li>HHS. (2024). <em>Change Healthcare Cybersecurity Incident: Frequently Asked Questions.</em></li>
-        <li>American Hospital Association. (2024). <em>Change Healthcare Cyberattack: Impact on the Health Care Field.</em></li>
-        <li>Senate Finance Committee. (2024). "Examining the Change Healthcare Cyberattack." Hearing Testimony.</li>
-      </ol></div></div>
+      <p>More information coming soon — research in progress.</p>
     `,
 
   };
 
   // === VIDEOS FOR EACH TIMELINE POINT (add file paths when you have them) ===
   const videos = {
-    point1:  '',
-    point2:  '',
-    point3:  '',
-    point4:  '',
-    point5:  '',
-    point6:  '',
-    point7:  '',
-    point8:  '',
-    point9:  '',
-    point10: '',
+    point1: '',
+    point2: '',
+    point3: '',
+    point4: '',
+    point5: '',
+    point6: '',
+    point7: '',
+    point8: '',
   };
 
   // === INTERACTIONS FOR EACH TIMELINE POINT ===
