@@ -216,6 +216,20 @@ a:hover {
   background: #0d0d0d;
 }
 
+/* === Rubric Level Labels === */
+.rubric-level {
+  font-weight: normal;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.rubric-level.negligible  { color: #777777; }
+.rubric-level.low         { color: #8ec07c; }
+.rubric-level.medium      { color: #fabd2f; }
+.rubric-level.high        { color: #fe8019; }
+.rubric-level.critical    { color: #fb4934; }
+.rubric-level.catastrophic{ color: #d3869b; }
+
 /* === Visualization Placeholder === */
 .viz-placeholder {
   background: #0d0d0d;

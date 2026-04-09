@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <h3>On December 23, 2015, 230,000 Ukrainians lost power — the first confirmed cyberattack to cause a blackout.</h3>
       <div class="attack-meta">
         <p><strong>Actors:</strong> Sandworm Team (attributed to Russian GRU Unit 74455)</p>
-        <p><strong>Type:</strong> Spear-phishing → SCADA/ICS sabotage (BlackEnergy malware, KillDisk wiper)</p>
+        <p><strong>Category:</strong> Spear-phishing → SCADA/ICS sabotage (BlackEnergy malware, KillDisk wiper)</p>
         <p><strong>Impact:</strong> Three Ukrainian energy companies taken offline; 230,000 customers without power for up to 6 hours</p>
       </div>
       <p>The attack began months earlier with spear-phishing emails sent to energy company employees. Malicious Word documents containing BlackEnergy malware gave attackers persistent access. For months they silently mapped operational technology (OT) systems — studying the SCADA controls that ran the physical power grid.</p>
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <h3>For over a decade, Russian state-sponsored groups have quietly embedded themselves in US critical infrastructure — not to destroy it yet, but to be ready.</h3>
       <div class="attack-meta">
         <p><strong>Actors:</strong> Sandworm (GRU), Fancy Bear (GRU APT28), Volt Typhoon (PRC — also active in US infrastructure)</p>
-        <p><strong>Type:</strong> Long-term persistent access campaigns targeting energy, water, and transportation sectors</p>
+        <p><strong>Category:</strong> Long-term persistent access campaigns targeting energy, water, and transportation sectors</p>
         <p><strong>Impact:</strong> Confirmed access to US grid control systems; CISA has issued repeated warnings since 2018</p>
       </div>
       <p>In 2018, the Department of Homeland Security and FBI jointly confirmed that Russian government actors had been conducting a multi-stage intrusion campaign against US energy, nuclear, water, aviation, and manufacturing sectors since at least 2016. Attackers used spear-phishing and watering-hole attacks to compromise trusted third-party vendors, then pivoted into operational technology networks.</p>
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <h3>In November 2023, hackers breached 22 Danish energy companies in a single coordinated wave — the largest cyberattack ever recorded against Danish critical infrastructure.</h3>
       <div class="attack-meta">
         <p><strong>Actors:</strong> Initially linked to Sandworm (Russian GRU); a second wave used infrastructure tied to the Fancy Bear group</p>
-        <p><strong>Type:</strong> Exploitation of a firewall vulnerability (Zyxel CVE-2023-28771) → access to industrial control systems</p>
+        <p><strong>Category:</strong> Exploitation of a firewall vulnerability (Zyxel CVE-2023-28771) → access to industrial control systems</p>
         <p><strong>Impact:</strong> 22 companies compromised; some forced to operate in island mode, disconnected from the national grid</p>
       </div>
       <p>The attacks unfolded in two distinct waves. In the first wave during May 2023, attackers exploited a critical vulnerability in Zyxel firewalls used by Danish energy operators. The flaw had been disclosed and patched — but 22 companies had not applied the update. Attackers moved quickly from firewall access into operational technology systems controlling physical energy infrastructure.</p>
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <h3>Between 2022 and the present, Microsoft has been breached multiple times by sophisticated state-sponsored actors — exposing US government email, source code, and internal systems.</h3>
       <div class="attack-meta">
         <p><strong>Actors:</strong> Lapsus$ (2022); Storm-0558 / Chinese MSS (2023); Midnight Blizzard / Russian SVR (2024)</p>
-        <p><strong>Type:</strong> Social engineering, forged authentication tokens, password spraying, lateral movement</p>
+        <p><strong>Category:</strong> Social engineering, forged authentication tokens, password spraying, lateral movement</p>
         <p><strong>Impact:</strong> US government email accounts accessed; Microsoft source code and internal systems exfiltrated; ongoing remediation as of 2024</p>
       </div>
       <p>In early 2022, the Lapsus$ extortion group compromised Microsoft using social engineering, accessing internal systems and leaking source code for Bing and Cortana. Later that year, Microsoft disclosed that the group had also briefly accessed a customer support agent's account.</p>
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <h3>In January 2025, Chinese state-sponsored hackers intensified a sustained campaign against Taiwan's government networks, targeting ministries, infrastructure operators, and defense-adjacent agencies.</h3>
       <div class="attack-meta">
         <p><strong>Actors:</strong> APT40 / Brass Typhoon (Chinese MSS); additional PRC-linked groups</p>
-        <p><strong>Type:</strong> Spear-phishing, supply chain compromise, exploitation of public-facing services</p>
+        <p><strong>Category:</strong> Spear-phishing, supply chain compromise, exploitation of public-facing services</p>
         <p><strong>Impact:</strong> Government ministries, telecommunications providers, and research institutions compromised; espionage and pre-positioning for potential conflict</p>
       </div>
       <p>Taiwan has been a persistent target of Chinese cyber operations for years, but January 2025 saw a notable escalation in both volume and sophistication. Taiwanese authorities reported a sharp increase in intrusion attempts against government systems, attributing the campaign to multiple PRC-linked threat actors operating in coordination.</p>
@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <h3>On April 28, 2025, a massive power failure swept across Spain and Portugal — tens of millions without electricity, and questions about whether it was a cyberattack.</h3>
       <div class="attack-meta">
         <p><strong>Actors:</strong> Under investigation — no confirmed attribution as of mid-2025</p>
-        <p><strong>Type:</strong> Grid failure — cause disputed between rare atmospheric oscillation, equipment failure, and possible cyber interference</p>
+        <p><strong>Category:</strong> Grid failure — cause disputed between rare atmospheric oscillation, equipment failure, and possible cyber interference</p>
         <p><strong>Impact:</strong> ~55 million people affected across the Iberian Peninsula; transport systems, hospitals, and communications disrupted for hours</p>
       </div>
       <p>At approximately 12:33 PM local time on April 28, 2025, electricity disappeared across Spain and Portugal in a matter of seconds. The blackout was one of the largest in European history, affecting 55 million people. Trains stopped mid-route. Airports switched to emergency power. Hospitals activated backup generators. ATMs went dark. Traffic lights failed across major cities.</p>
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <h3>Loading ...</h3>
       <div class="attack-meta">
         <p><strong>Actors:</strong> TBD</p>
-        <p><strong>Type:</strong> TBD</p>
+        <p><strong>Category:</strong> TBD</p>
         <p><strong>Impact:</strong> TBD</p>
       </div>
       <p>More information coming soon — research in progress.</p>
@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <h3>Loading ...</h3>
       <div class="attack-meta">
         <p><strong>Actors:</strong> TBD</p>
-        <p><strong>Type:</strong> TBD</p>
+        <p><strong>Category:</strong> TBD</p>
         <p><strong>Impact:</strong> TBD</p>
       </div>
       <p>More information coming soon — research in progress.</p>
