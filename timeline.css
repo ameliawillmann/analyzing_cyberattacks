@@ -56,6 +56,21 @@ body {
   transition: 0.4s;
 }
 
+/* Year label below each dot */
+.timeline-point::after {
+  content: attr(data-year);
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  color: #666;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+  font-family: 'IBM Plex Mono', monospace;
+  pointer-events: none;
+}
+
 .timeline-point:hover {
   transform: scale(1.5);
   background: var(--color);
