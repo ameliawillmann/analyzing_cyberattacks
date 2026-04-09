@@ -1,12 +1,3 @@
-// ==== Custom Cursor ====
-document.addEventListener("mousemove", e => {
-  const cursor = document.getElementById("customCursor");
-  if (cursor) {
-    cursor.style.left = `${e.clientX}px`;
-    cursor.style.top = `${e.clientY}px`;
-  }
-});
-
 // ==== Footnotes Toggle ====
 function toggleFootnotes() {
   const wrapper = document.getElementById('footnotesWrapper');
