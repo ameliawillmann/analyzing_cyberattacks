@@ -300,7 +300,8 @@ a:hover {
   width: 0;
   animation:
     typewriter 2.4s steps(44) 0.3s forwards,
-    blink-caret 0.75s step-end 0.3s 4;
+    blink-caret 0.75s step-end 2.7s 3,
+    hide-caret 0s 5s forwards;
 }
 
 @keyframes typewriter {
@@ -310,6 +311,10 @@ a:hover {
 
 @keyframes blink-caret {
   50% { border-color: transparent; }
+}
+
+@keyframes hide-caret {
+  to { border-color: transparent; }
 }
 
 .banner-subtitle {
