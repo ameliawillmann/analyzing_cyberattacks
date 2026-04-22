@@ -224,12 +224,12 @@ a:hover {
   white-space: nowrap;
 }
 
-.rubric-level.negligible  { color: #777777; }
-.rubric-level.low         { color: #8ec07c; }
-.rubric-level.medium      { color: #fabd2f; }
-.rubric-level.high        { color: #fe8019; }
-.rubric-level.critical    { color: #fb4934; }
-.rubric-level.catastrophic{ color: #d3869b; }
+.rubric-level.negligible   { color: #ffffff; }
+.rubric-level.low          { color: #2980b9; }
+.rubric-level.medium       { color: #27ae60; }
+.rubric-level.high         { color: #f1c40f; }
+.rubric-level.severe       { color: #e74c3c; }
+.rubric-level.catastrophic { color: #aaaaaa; } /* light grey so black text shows on dark bg */
 
 /* === Visualization Placeholder === */
 .viz-placeholder {

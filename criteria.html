@@ -28,12 +28,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Major Cyberattacks — Criteria</title>
+  <title>Cyberattacks on Critical Infrastructure — Criteria</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
+  <script src="criteria.js" defer></script>
 </head>
 <body>
 
@@ -96,7 +97,7 @@
             <td>[Description]</td>
           </tr>
           <tr>
-            <td class="rubric-level critical">Critical</td>
+            <td class="rubric-level severe">Severe</td>
             <td>[Description]</td>
             <td>[Description]</td>
             <td>[Description]</td>
@@ -118,7 +119,7 @@
     <div class="content-block">
       <h2>Visualization</h2>
       <p>[Visualizing rubric ...]</p>
-      <div class="viz-placeholder">[Add bar chart or comparative visualization here]</div>
+      <canvas id="rubricChart"></canvas>
     </div>
 
     <div class="content-block">
