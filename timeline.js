@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
           overlay.style.background = "rgba(244, 244, 244, 0.5)";
         }
 
-        body.style.background = "#ffffff";
+        body.style.background = "#000000";
       }
     });
 
@@ -331,7 +331,7 @@ document.addEventListener("DOMContentLoaded", function () {
       video.play();
     }
 
-    body.style.background = "#f4f4f4";
+    body.style.background = "#000000";
   }
 
   // === FUNCTION: Position hover tooltip ===

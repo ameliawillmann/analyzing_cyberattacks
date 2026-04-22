@@ -1,15 +1,37 @@
 /* Timeline styles adapted from:
    https://github.com/irllyliketoast/Borinquen/blob/main/timeline.html */
 
-/* === Timeline page body === */
+/* === Timeline page body — always black === */
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   position: relative;
   overflow: auto;
-  transition: background 0.4s ease-in-out;
+  background: #000000 !important;
+}
+
+/* === Page Header === */
+.timeline-header {
+  position: fixed;
+  top: 46px; /* below nav */
+  left: 0;
+  width: 100%;
+  padding: 18px 60px 14px;
+  background: #000;
+  z-index: 10;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.timeline-page-title {
+  font-size: 1.3rem;
+  font-weight: normal;
+  color: #999;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0;
 }
 
 /* === Horizontal Timeline Bar === */
@@ -18,21 +40,21 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80vw;
+  width: 85vw;
   height: 2px;
-  background: #333;
+  background: #fff;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   transition: all 0.5s ease-in-out;
   z-index: 1;
-  margin-top: 30px; /* account for fixed nav */
+  margin-top: 60px; /* account for nav + header */
 }
 
 /* When panel opens, shift timeline up */
 .timeline.shift-left {
-  transform: translate(-50%, calc(-50vh + 80px));
+  transform: translate(-50%, calc(-50vh + 100px));
 }
 
 .timeline.expanded {
@@ -47,10 +69,10 @@ body {
 /* === Timeline Nodes === */
 .timeline-point {
   position: relative;
-  width: 30px;
-  height: 30px;
-  background: #1a1a1a;
-  border: 1px solid #444;
+  width: 42px;
+  height: 42px;
+  background: #fff;
+  border: 2px solid #fff;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -63,11 +85,11 @@ body {
 .timeline-point::after {
   content: attr(data-year);
   position: absolute;
-  top: calc(100% + 10px);
+  top: calc(100% + 12px);
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.7rem;
-  color: #666;
+  font-size: 0.72rem;
+  color: #888;
   white-space: nowrap;
   letter-spacing: 0.05em;
   font-family: 'IBM Plex Mono', monospace;
@@ -78,14 +100,14 @@ body {
   transform: scale(1.5);
   background: var(--color);
   border-color: var(--color);
-  box-shadow: 0 0 12px var(--color);
+  box-shadow: 0 0 16px var(--color);
 }
 
 .timeline-point.selected {
-  transform: scale(2.2);
+  transform: scale(2.4);
   background: var(--color);
   border-color: var(--color);
-  box-shadow: 0 0 18px var(--color);
+  box-shadow: 0 0 22px var(--color);
 }
 
 /* === Hover Tooltip === */
@@ -198,28 +220,6 @@ body {
 #mini-page::-webkit-scrollbar-thumb  { background: #333; }
 #mini-page::-webkit-scrollbar-thumb:hover { background: #555; }
 
-/* === Background Video === */
-#background-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -5;
-  opacity: 0.4;
-  transition: opacity 0.5s ease-in-out;
-}
-
-/* === Color Overlay === */
-#color-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(10, 10, 10, 0.7);
-  z-index: -1;
-  pointer-events: none;
-  transition: background 0.5s ease;
-}
+/* Background video and overlay hidden — background is always black */
+#background-video { display: none; }
+#color-overlay     { display: none; }
