@@ -1,3 +1,6 @@
+// Timeline interaction code adapted from:
+// https://github.com/irllyliketoast/Borinquen/blob/main/timeline.html
+
 // ===== GLOBAL =====
 let timelinePointSelected = false;
 
