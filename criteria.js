@@ -2,12 +2,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.getElementById('rubricChart');
   const ctx = canvas.getContext('2d');
 
-  // Size
-  canvas.width  = 640;
-  canvas.height = 380;
+  // Size — scale for retina/high-DPI screens
+  const dpr     = window.devicePixelRatio || 1;
+  const cssW    = 640;
+  const cssH    = 380;
+  canvas.width  = cssW * dpr;
+  canvas.height = cssH * dpr;
+  canvas.style.width  = cssW + 'px';
+  canvas.style.height = cssH + 'px';
+  ctx.scale(dpr, dpr);
 
-  const W    = canvas.width;
-  const H    = canvas.height;
+  const W    = cssW;
+  const H    = cssH;
   const padL = 72;
   const padR = 24;
   const padT = 24;
@@ -20,37 +26,28 @@ document.addEventListener('DOMContentLoaded', () => {
   ctx.fillStyle = '#0a0a0a';
   ctx.fillRect(0, 0, W, H);
 
-  // 6 bars — heights follow an exponential decay curve
-  const n = 6;
-  const slotW = chartW / n;
-  const barW  = slotW * 0.72;
-  const barColors = ['#ffffff', '#2980b9', '#27ae60', '#f1c40f', '#e74c3c', '#111111'];
-  const heights   = [0.92, 0.70, 0.50, 0.32, 0.17, 0.07]; // fraction of chartH
+  const n          = 6;
+  const slotW      = chartW / n;
+  const barW       = slotW * 0.72;
+  const barColors  = ['#ffffff', '#2980b9', '#27ae60', '#f1c40f', '#e74c3c', '#222222'];
+  const heights    = [0.92, 0.70, 0.50, 0.32, 0.17, 0.07];
 
-  // Bar center X positions
-  const barCenters = Array.from({ length: n }, (_, i) => padL + i * slotW + slotW / 2);
+  // === Draw single smooth gray curve area ===
+  // Use one quadratic bezier from top-left to bottom-right
+  const curveStartX = padL;
+  const curveStartY = padT + chartH * (1 - heights[0]);
+  const curveEndX   = padL + chartW;
+  const curveEndY   = padT + chartH * (1 - heights[n - 1]);
+  const cpX         = padL + chartW * 0.25; // control point — pulls curve to the left
+  const cpY         = padT;                 // control point — pulls curve upward
 
-  // === Draw gray curve area ===
   ctx.beginPath();
-  ctx.moveTo(padL, padT + chartH); // bottom-left
-
-  // Start the curve at the top-left corner
-  ctx.lineTo(padL, padT + chartH * (1 - heights[0]));
-
-  // Draw smooth bezier through bar top-center points
-  for (let i = 1; i < n; i++) {
-    const x0 = barCenters[i - 1];
-    const y0 = padT + chartH * (1 - heights[i - 1]);
-    const x1 = barCenters[i];
-    const y1 = padT + chartH * (1 - heights[i]);
-    const cpX = (x0 + x1) / 2;
-    ctx.bezierCurveTo(cpX, y0, cpX, y1, x1, y1);
-  }
-
-  // Extend curve to right edge and close
-  ctx.lineTo(padL + chartW, padT + chartH);
+  ctx.moveTo(padL, padT + chartH);           // bottom-left corner
+  ctx.lineTo(curveStartX, curveStartY);      // up to curve start
+  ctx.quadraticCurveTo(cpX, cpY, curveEndX, curveEndY); // single smooth swoop
+  ctx.lineTo(padL + chartW, padT + chartH);  // down to bottom-right
   ctx.closePath();
-  ctx.fillStyle = '#888888';
+  ctx.fillStyle = '#777777';
   ctx.fill();
 
   // === Draw colored bars ===
@@ -62,9 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
     ctx.fillStyle = color;
     ctx.fillRect(x, y, barW, h);
 
-    // Outline white bar so it's visible
+    // Outline white bar so it's visible against background
     if (i === 0) {
-      ctx.strokeStyle = '#888';
+      ctx.strokeStyle = '#555';
       ctx.lineWidth = 0.8;
       ctx.strokeRect(x, y, barW, h);
     }
@@ -79,8 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
   ctx.lineTo(padL + chartW, padT + chartH);
   ctx.stroke();
 
-  // === Axis labels ===
-  ctx.fillStyle = '#bbbbbb';
+  // === Axis labels — white ===
+  ctx.fillStyle = '#ffffff';
   ctx.font = 'bold 11px "IBM Plex Mono", monospace';
 
   // X label
@@ -95,10 +92,10 @@ document.addEventListener('DOMContentLoaded', () => {
   ctx.fillText('FREQUENCY', 0, 0);
   ctx.restore();
 
-  // === Category labels below x-axis ===
+  // === Category labels — white ===
   const catLabels = ['Negligible', 'Low', 'Medium', 'High', 'Severe', 'Catastrophic'];
   ctx.font = '9px "IBM Plex Mono", monospace';
-  ctx.fillStyle = '#777';
+  ctx.fillStyle = '#ffffff';
   catLabels.forEach((label, i) => {
     const x = padL + i * slotW + slotW / 2;
     ctx.textAlign = 'center';
