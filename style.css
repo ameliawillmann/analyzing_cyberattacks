@@ -229,7 +229,7 @@ a:hover {
 .rubric-level.medium       { color: #27ae60; }
 .rubric-level.high         { color: #f1c40f; }
 .rubric-level.severe       { color: #e74c3c; }
-.rubric-level.catastrophic { color: #aaaaaa; } /* light grey so black text shows on dark bg */
+.rubric-level.crisis       { color: #aaaaaa; }
 
 /* === Visualization Placeholder === */
 .viz-placeholder {

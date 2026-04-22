@@ -1,7 +1,11 @@
 // ==== Footnotes Toggle ====
+// Supports both single (legacy) and multi-button pages
 function toggleFootnotes() {
-  const wrapper = document.getElementById('footnotesWrapper');
-  const btn = document.getElementById('toggleSourcesBtn');
+  toggleFootnotesById('footnotesWrapper', document.getElementById('toggleSourcesBtn'));
+}
+
+function toggleFootnotesById(wrapperId, btn) {
+  const wrapper = document.getElementById(wrapperId);
   if (!wrapper || !btn) return;
 
   const isOpen = wrapper.classList.contains('open');

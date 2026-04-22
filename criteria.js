@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const curveStartY = padT + chartH * (1 - heights[0]);
   const curveEndX   = padL + chartW;
   const curveEndY   = padT + chartH * (1 - heights[n - 1]);
-  const cpX         = padL + chartW * 0.25; // control point — pulls curve to the left
-  const cpY         = padT;                 // control point — pulls curve upward
+  const cpX         = padL + chartW * 0.75; // control point — pulls curve to the right
+  const cpY         = padT + chartH;        // control point — pulls curve downward (concave)
 
   ctx.beginPath();
   ctx.moveTo(padL, padT + chartH);           // bottom-left corner
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ctx.restore();
 
   // === Category labels — white ===
-  const catLabels = ['Negligible', 'Low', 'Medium', 'High', 'Severe', 'Catastrophic'];
+  const catLabels = ['Negligible', 'Low', 'Medium', 'High', 'Severe', 'Crisis'];
   ctx.font = '9px "IBM Plex Mono", monospace';
   ctx.fillStyle = '#ffffff';
   catLabels.forEach((label, i) => {
