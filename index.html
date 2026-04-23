@@ -54,18 +54,25 @@
 
   <main class="page-content">
     <h2 class="page-title">Background</h2>
-    <p class="page-intro">The increase in the number of cyberattacks against foreign entities is transforming how nations engage in modern warfare. We are entering an alarming era in which nations can wage war and inflict widespread harm without ever crossing another country's borders. As cyberattacks on critical infrastructure and operational technology (OT) systems become more prevalent, the need for standardized frameworks to assess and report on the severity of these threats is urgent.</p>
+    <p class="page-intro">The increase in the number of cyberattacks against foreign entities is transforming how nations engage in modern warfare. We are entering an alarming era in which nations can wage war and inflict widespread harm without ever crossing another country's borders. As cyberattacks on critical infrastructure become more prevalent, the need for standardized frameworks to assess and report on the severity of these threats is urgent. Yet, we are not acting as if our everyday lives depend on it. Not every cyberattack has catastrophic impacts, but every cyberattack has the potential to—especially those targeting civilian water supply, energy grids, and healthcare systems.</p>
 
     <div class="content-block">
       <h2>Types of Cyberattacks</h2>
-      <p>[Types of cyberattacks text here...]</p>
+      <p>This list focuses on the types of cyberattacks that usually target critical infrastructure.</p>
+      <p><strong>Malware:</strong> Software code that is written to intentionally harm a computer or software system (e.g. worms, spyware)</p>
+      <p><strong>Ransomware:</strong> Type of malware attack in which the attacker encrypts victim's sensitive data until the victim pays a ransom to the attacker</p>
+      <p><strong>Denial-of-Service (DoS) attacks:</strong> Floods a network or system with requests to intentionally slow down or disrupt business operations</p>
+      <p><strong>Distributed Denial-of-Service attacks:</strong> Type of DoS attack that floods online resource with traffic from multiple sources all at once, which is usually harder to recognize and defend against</p>
+      <p><strong>Internet of Things (IoT) attacks:</strong> Exploits vulnerabilities in IoT devices and networks (e.g. smart home devices) to assume control of the device and steal data</p>
 
       <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
       <div class="footnotes-wrapper" id="footnotesWrapper">
         <div class="footnotes">
           <ol>
-            <li>[Source 1]</li>
-            <li>[Source 2]</li>
+            <li><a href="https://www.researchgate.net/publication/397537286_The_History_and_Evolution_of_Cyber_Attacks_-_A_Comprehensive_Study" target="_blank">https://www.researchgate.net/publication/397537286_The_History_and_Evolution_of_Cyber_Attacks_-_A_Comprehensive_Study</a></li>
+            <li><a href="https://www.weforum.org/stories/2025/10/dangerous-blindspot-in-infrastructure-cybersecurity/" target="_blank">https://www.weforum.org/stories/2025/10/dangerous-blindspot-in-infrastructure-cybersecurity/</a></li>
+            <li><a href="https://www.crowdstrike.com/en-us/cybersecurity-101/cyberattacks/common-cyberattacks/" target="_blank">https://www.crowdstrike.com/en-us/cybersecurity-101/cyberattacks/common-cyberattacks/</a></li>
+            <li><a href="https://www.ibm.com/think/topics/cyberthreats-types" target="_blank">https://www.ibm.com/think/topics/cyberthreats-types</a></li>
           </ol>
         </div>
       </div>
@@ -75,9 +82,6 @@
       <h2>Critical Infrastructure</h2>
       <p>The physical and virtual systems and networks crucial for the functioning of society, economic stability, and national security.</p>
       <p>After the Presidential Policy Directive 21 (PPD-21) established the 16 critical infrastructure sectors in 2013, the U.S. Cybersecurity & Infrastructure Security Agency (CISA) was tasked with maintain and protecting them. Since then, these 16 sectors have provided guidance to international organizations and governments that are developing cybersecurity performance standards and risk assessment metrics. </p>
-      <p><strong>16 Sectors:</strong></p>
-      <img src="cisa_img.jpg" alt="CISA 16 Critical Infrastructure Sectors" style="width: 65%; display: block; border-radius: 4px; margin-top: 8px;">
-
       <button class="view-sources-btn" onclick="toggleFootnotesById('ciSources', this)">View Sources</button>
       <div class="footnotes-wrapper" id="ciSources">
         <div class="footnotes">
@@ -87,9 +91,12 @@
             <li><a href="https://www.cisa.gov/topics/critical-infrastructure-security-and-resilience/critical-infrastructure-sectors" target="_blank">https://www.cisa.gov/topics/critical-infrastructure-security-and-resilience/critical-infrastructure-sectors</a></li>
             <li><a href="https://www.atlanticcouncil.org/in-depth-research-reports/issue-brief/critical-infrastructure-cybersecurity-prioritization/" target="_blank">https://www.atlanticcouncil.org/in-depth-research-reports/issue-brief/critical-infrastructure-cybersecurity-prioritization/</a></li>
             <li><a href="https://www.cisa.gov/topics/risk-management/coronavirus/identifying-critical-infrastructure-during-covid-19" target="_blank">https://www.cisa.gov/topics/risk-management/coronavirus/identifying-critical-infrastructure-during-covid-19</a></li>
+            <li><a href="https://www.eplus.com/solutions/service-provider-and-critical-infrastructure/critical-infrastructure-sectors" target="_blank">hold6</a></li>
           </ol>
         </div>
       </div>
+      <img src="critical-2.png" alt="CISA 16 Critical Infrastructure Sectors" style="width: 50%; display: block; border-radius: 4px; margin: 28px auto 8px;">
+      <p style="text-align: center; font-style: italic; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0;">Image courtesy of the <a href="https://www.cisa.gov/topics/critical-infrastructure-security-and-resilience/critical-infrastructure-sectors" target="_blank">Cybersecurity & Infrastructure Security Agency (CISA)</a></p>
     </div>
 
     <div class="content-block">

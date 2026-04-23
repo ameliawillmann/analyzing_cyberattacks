@@ -55,7 +55,7 @@ body {
   justify-content: space-evenly;
   transition: all 0.5s ease-in-out;
   z-index: 1;
-  margin-top: 60px; /* account for nav + header */
+  margin-top: 20px; /* account for nav + header */
 }
 
 /* When panel opens, shift timeline up */
@@ -229,3 +229,44 @@ body {
 /* Background video and overlay hidden — background is always black */
 #background-video { display: none; }
 #color-overlay     { display: none; }
+
+/* === Ongoing Threat Arrows === */
+.timeline-arrows {
+  position: absolute;
+  top: calc(50% + 70px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  z-index: 1;
+  margin-top: 60px;
+  transition: opacity 0.3s ease;
+}
+
+.timeline-arrows.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.timeline-arrow {
+  color: #ffffff;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  padding: 8px 20px;
+  border: 1px solid #ffffff;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.timeline-arrow:hover {
+  color: var(--color);
+  border-color: var(--color);
+}
+
+.timeline-arrow.selected {
+  color: var(--color);
+  border-color: var(--color);
+}
