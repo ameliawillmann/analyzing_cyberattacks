@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="attack-meta">
         <p><strong>Date:</strong> June 2010</p>
         <p><strong>Actors:</strong> United States & Israel joint operation targeting Iran</p>
-        <p><strong>Criteria Category:</strong> [To be added]</p>
+        <p><strong>Criteria Level:</strong> Low</p>
       </div>
       <p>Stuxnet was a computer worm developed as a joint US-Israeli cyber weapon. Under the George W. Bush administration, the worm was designed with the intention to slowly damage Iran's nuclear capability while confusing the Iranian scientists about the cause. The US targeted Iran's uranium enrichment plant in Natanz.</p>
       <p>The first version of the worm was unleashed in 2007 but was quickly accelerated under the Obama administration. More aggressive versions were released in 2009 and 2010 out of fear that Iran would have enough uranium to build a bomb in 2010. Stuxnet sabotaged the centrifuge rotation speeds while also feeding false data to the operators. Therefore, the machines appeared to function normally but were being physically destroyed from the inside. It was discovered in June 2010. Overall, the attack destroyed nearly 1,000 of Iran's 6,000 centrifuges, which are the machines that enrich uranium… which is a crucial step to build an atomic bomb.</p>
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="attack-meta">
         <p><strong>Date:</strong> December 2015</p>
         <p><strong>Actors:</strong> Sandworm (associated with Russia's GRU) targeting Ukraine</p>
-        <p><strong>Criteria Category:</strong> [To be added]</p>
+        <p><strong>Criteria Level:</strong> High</p>
       </div>
       <p>The 2015 power grid attack was the first of two widely publicized attacks against Ukraine critical infrastructure. The 2015 attack started with spear-phishing emails and malicious Microsoft Word files carrying BlackEnergy malware. This malware gave the attackers access to industrial control systems which controlled power delivery operations. In December, the attackers struck three regional electric power distribution companies, impacting about 225,000 customers. It was a calculated and coordinated attack taking out each company within 30 minutes of each other. After the attack, the attackers also deployed KillDisk malware to wipe files on the targeted systems and overall corrupt the systems to be inoperable.</p>
       <p>The 2016 attack built on the 2015 attack. It was more automated, with the code manipulations built right into the malware. Therefore, it was also ore scalable. Despite no major outages, Ukrainian grid operators had to manually close breakers at affected stations to restore electricity. The attackers made it significantly harder for the companies to recover. These attacks are part of the persistent cyberoperations that GRU has conducted against Ukraine. Over the past decade, attacks have grown increasingly complex, harder to detect, and more damaging.</p>
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="attack-meta">
         <p><strong>Date:</strong> September 2019</p>
         <p><strong>Actors:</strong> Targeted India. Unconfirmed attackers but possibly caused by a variant of the DTRACK virus that was developed by the North Korea-linked Lazarus group.</p>
-        <p><strong>Criteria Category:</strong> [To be added]</p>
+        <p><strong>Criteria Level:</strong> Medium</p>
       </div>
       <p>The Kudankulam Nuclear Power Plant (KKNPP) in Tamil Nadu is India's largest nuclear facility. In September 2019, the plant suffered a cyberattack. At first, KKNPP plant officials denied that it was a cyberattack, officially stating that "any cyberattack on the Nuclear Power Plant Control System is not possible."</p>
       <p>About a month later, the Nuclear Power Corporation Of India Limited (NPCIL) publicly confirmed it was a cyberattack that was first noticed in early September by CERT-In (Indian Computer Emergency Response Team). Investigations revealed that a user had connected a malware-infected personal computer to the plant's administrative network. The administrative network was completely compromised. While the plant's operational network and systems are not connected to the administrative network, a large amount of data from the KKNPP's administrative network was still stolen.</p>
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="attack-meta">
         <p><strong>Date:</strong> April 2020</p>
         <p><strong>Actors:</strong> Iran targeting Israel (Iran declined involvement)</p>
-        <p><strong>Criteria Category:</strong> [To be added]</p>
+        <p><strong>Criteria Level:</strong> Severe</p>
       </div>
       <p>In April 2020, the Israel Water Authority detected that chlorine and other chemical levels in its water supply were abnormal and alerted Israel's National Cyber Directorate. The Israel Water Authority was able to mitigate the crisis before any real damage had occurred, but there was potential for chlorine or other chemicals to be mixed into the water in harmful proportions. The increase chlorine concentrations could have caused serious illness. The increase in chemical levels could have also triggered a fail-safe, shutting off the water supply to thousands of residents during a heatwave. Investigations later revealed the attackers were targeting computers that control water flow and wastewater treatment for rural communities in Israel.</p>
       <p>It is worth noting that this was not unprompted. Israel and Iran consistently hack into each other's critical infrastructure networks and systems. However, this attack exposed a critical vulnerability that could have caused mass harm. While unsuccessful, the attack could have potentially poisoned a country's water supply. This was one of the first major cyberattacks on critical infrastructure that would have caused mass harm to the civilians of the targeted nation.</p>
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="attack-meta">
         <p><strong>Date:</strong> May 2023</p>
         <p><strong>Actors:</strong> Chinese state-sponsored actor Volt Typhoon targeted US</p>
-        <p><strong>Criteria Category:</strong> [To be added]</p>
+        <p><strong>Criteria Level:</strong> Medium</p>
       </div>
       <p>In May 2023, CISA, NSA, FBI, and intelligence agencies from other countries confirmed that Volt Typhoon, a Chinese state-sponsored actor, had been operating mostly undetected inside US critical infrastructure networks for at least 5 years. However, the actors caused no immediate disruption or damage. Why? The US called it "pre-positioning"—building capabilities and positioning themselves in networks or systems to destroy critical infrastructure in the event of a major crisis or conflict with the US.</p>
       <p>This is also known as the "living-off-the-land" technique.</p>
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="attack-meta">
         <p><strong>Date:</strong> May 2023</p>
         <p><strong>Actors:</strong> Targeted Denmark. Unconfirmed attackers but Russia's GRU suspected.</p>
-        <p><strong>Criteria Category:</strong> [To be added]</p>
+        <p><strong>Criteria Level:</strong> Low</p>
       </div>
       <p>May 2023 saw the largest cyberattack ever recorded against Danish critical infrastructure. 22 companies which operate Danish energy infrastructure were compromised. SektorCERT, Denmark's network of essential entities operating critical infrastructure, detected the attack. Its monitoring picked up on the simultaneous multi-target attacks.</p>
       <p>Prior to the attack, Zyxel had identified a critical vulnerability in its firewalls that many members used. An attacker could exploit the Zyxel firewall and gain complete control of the firewall without knowing either usernames or passwords for the device. An update was issued, but not all the companies applied the update immediately. Therefore, the attackers compromised 11 companies immediately in the first wave. A few weeks later, the attackers executed a second wave of attacks, exploiting two unknown vulnerabilities in the firewall. Several companies were forced to operate in complete isolation of the grid until the companies could secure their systems. Although no significant damage resulted, the attack exposed the systemic vulnerabilities within Denmark's energy sector. And how crucial it is to apply updates that patch vulnerabilities immediately.</p>
@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="attack-meta">
         <p><strong>Date:</strong> April 2025</p>
         <p><strong>Actors:</strong> Targeted Spain & Portugal. Attackers unconfirmed.</p>
-        <p><strong>Criteria Category:</strong> [To be added]</p>
+        <p><strong>Criteria Level:</strong> High</p>
       </div>
       <p>On April 28, 2025, Spain, Portugal, and parts of France experienced nationwide power outages affecting millions of people. The lights went out, trains stopped mid-route, hospitals switched to back-up power, and ATMs shut down. The lack of electricity had a cascading effect on other critical infrastructures, such as water shortages and telecommunication networks. Panic spread across the streets.</p>
       <p>Spain's grid operator Red Eléctrica initially attributed the outage to a rare occurrence of rapid fluctuations in electric flow that triggered the protective grid shutdowns. Investigations revealed that a problem with the power connection between France and Spain resulted in the Spanish grid being disconnected from the European grid. While Spain has publicly ruled out the possibility of a cyberattack, this would not be the first blackout caused by a cyberattack.</p>
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="attack-meta">
         <p><strong>Date:</strong> January 2026</p>
         <p><strong>Actors:</strong> US targeting Venezuela (unconfirmed)</p>
-        <p><strong>Criteria Category:</strong> [To be added]</p>
+        <p><strong>Criteria Level:</strong> High</p>
       </div>
       <p>On January 3, 2026, the US military captured Venezuelan President Nicolás Maduro. Caracas, Venezuela's capital, also entered a blackout. For most residents, it only lasted a few minutes. However, the areas surrounding the military compound where Maduro was captured experienced power outages up to three days.</p>
       <p>Although the US has not claimed responsibility, President Trump made a reference to the cyberoperation: "It was dark, the lights of Caracas were largely turned off due to a certain expertise that we have, it was dark, and it was deadly."</p>
