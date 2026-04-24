@@ -213,9 +213,6 @@ body {
 #mini-page::-webkit-scrollbar-thumb  { background: #333; }
 #mini-page::-webkit-scrollbar-thumb:hover { background: #555; }
 
-/* Background video and overlay hidden — background is always black */
-#background-video { display: none; }
-#color-overlay     { display: none; }
 
 /* === Ongoing Threat Arrows === */
 .timeline-arrows {

@@ -1,6 +1,3 @@
-// Timeline interaction code adapted from:
-// https://github.com/irllyliketoast/Borinquen/blob/main/timeline.html
-
 // ===== GLOBAL =====
 let timelinePointSelected = false;
 
@@ -31,8 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const timeline       = document.getElementById('timeline');
   const arrowsEl       = document.getElementById('timeline-arrows');
   const body           = document.body;
-  const video          = document.getElementById('background-video');
-  const overlay        = document.getElementById('color-overlay');
   const infoBox        = document.getElementById("timeline-info-box");
   const backButton     = document.getElementById('back-button');
 
@@ -47,29 +42,29 @@ document.addEventListener("DOMContentLoaded", function () {
   const content = {
 
     point1: `
-      <h3>In June 2010, a computer worm discovered at an Iranian nuclear facility changed warfare forever — the first cyberweapon confirmed to cause physical destruction of critical infrastructure.</h3>
+      <h3>The world’s first cyber weapon.</h3>
       <div class="attack-meta">
-        <p><strong>Actors:</strong> United States (NSA) and Israel (Unit 8200) — joint operation codenamed "Olympic Games"</p>
-<p><strong>Criteria Category:</strong> [To be added]</p>
-        <p><strong>Impact:</strong> ~1,000 Iranian centrifuges at Natanz destroyed; Iran's nuclear program set back an estimated 1–2 years; first cyberweapon confirmed to cause physical damage to infrastructure</p>
+        <p><strong>Date:</strong> June 2010</p>
+        <p><strong>Actors:</strong> United States & Israel joint operation targeting Iran</p>
+        <p><strong>Criteria Category:</strong> [To be added]</p>
       </div>
-      <p>Stuxnet had been active since at least 2009, but was not discovered until June 2010. The worm targeted Siemens programmable logic controllers (PLCs) used to spin Iran's uranium enrichment centrifuges at Natanz. It subtly altered centrifuge rotation speeds while feeding false data to operators — making the machines appear to function normally while physically destroying them from the inside.</p>
-      <p>The sophistication of the code — four zero-day exploits used simultaneously, rootkit-level concealment, a self-limiting payload that only activated on specific Siemens configurations — pointed immediately to state-level development. Subsequent reporting confirmed joint US-Israeli authorship. The operation was authorized under the Bush administration and continued under Obama as an alternative to military strikes on Iran's nuclear program.</p>
-      <p>Stuxnet reshaped the global conversation about cyberwarfare. It proved that digital attacks could cross into the physical world, that critical infrastructure was a viable military target, and that the line between a cyberoperation and an act of war was thinner than anyone had publicly admitted.</p>
+      <p>Stuxnet was a computer worm developed as a joint US-Israeli cyber weapon. Under the George W. Bush administration, the worm was designed with the intention to slowly damage Iran's nuclear capability while confusing the Iranian scientists about the cause. The US targeted Iran's uranium enrichment plant in Natanz.</p>
+      <p>The first version of the worm was unleashed in 2007 but was quickly accelerated under the Obama administration. More aggressive versions were released in 2009 and 2010 out of fear that Iran would have enough uranium to build a bomb in 2010. Stuxnet sabotaged the centrifuge rotation speeds while also feeding false data to the operators. Therefore, the machines appeared to function normally but were being physically destroyed from the inside. It was discovered in June 2010. Overall, the attack destroyed nearly 1,000 of Iran's 6,000 centrifuges, which are the machines that enrich uranium… which is a crucial step to build an atomic bomb.</p>
+      <p>This was the first cyber weapon confirmed to cause physical destruction to critical infrastructure. It is often cited as the spark to the modern transformation of cyberwarfare. As a digital attack that impacted physical machinery, Stuxnet solidified that critical infrastructure was a military target that governments needed to protect and defend.</p>
       <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
       <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
-        <li>Sanger, D. E. (2012). <em>Confront and Conceal: Obama's Secret Wars and Surprising Use of American Power.</em> Crown Publishers.</li>
-        <li>Zetter, K. (2014). <em>Countdown to Zero Day: Stuxnet and the Launch of the World's First Digital Weapon.</em> Crown Publishers.</li>
-        <li>Langner, R. (2011). "Stuxnet: Dissecting a Cyberwarfare Weapon." <em>IEEE Security & Privacy, 9</em>(3), 49–51.</li>
+        <li><a href="https://cisac.fsi.stanford.edu/news/stuxnet" target="_blank">https://cisac.fsi.stanford.edu/news/stuxnet</a></li>
+        <li><a href="https://www.nytimes.com/2012/06/01/world/middleeast/obama-ordered-wave-of-cyberattacks-against-iran.html?pagewanted=all&_r=0" target="_blank">https://www.nytimes.com/2012/06/01/world/middleeast/obama-ordered-wave-of-cyberattacks-against-iran.html</a></li>
+        <li><a href="https://www.washingtonpost.com/world/national-security/stuxnet-was-work-of-us-and-israeli-experts-officials-say/2012/06/01/gJQAlnEy6U_story.html" target="_blank">https://www.washingtonpost.com/world/national-security/stuxnet-was-work-of-us-and-israeli-experts-officials-say/2012/06/01/gJQAlnEy6U_story.html</a></li>
       </ol></div></div>
     `,
 
     point2: `
       <h3>On December 23, 2015, 230,000 Ukrainians lost power — the first confirmed cyberattack in history to cause a blackout.</h3>
       <div class="attack-meta">
+        <p><strong>Date:</strong> December 2015</p>
         <p><strong>Actors:</strong> Sandworm Team (attributed to Russian GRU Unit 74455)</p>
         <p><strong>Criteria Category:</strong> [To be added]</p>
-        <p><strong>Impact:</strong> Three Ukrainian energy companies taken offline; 230,000 customers without power for up to 6 hours; operators locked out of their own systems</p>
       </div>
       <p>The attack began months earlier with spear-phishing emails sent to energy company employees. Malicious Word documents containing BlackEnergy malware gave attackers persistent access to IT networks. Over months, they silently moved deeper — mapping the SCADA systems that controlled the physical power grid.</p>
       <p>On December 23, the attackers struck simultaneously across three regional energy companies. They remotely opened breakers to cut power, deployed KillDisk to wipe and brick infected workstations, and flooded customer service lines with fake calls to delay the response. Operators watched their cursors move on their own screens — completely locked out, unable to intervene.</p>
@@ -85,9 +80,9 @@ document.addEventListener("DOMContentLoaded", function () {
     point3: `
       <h3>In October 2019, North Korean malware was found on the administrative network of India's largest nuclear power plant — a breach the government initially denied.</h3>
       <div class="attack-meta">
+        <p><strong>Date:</strong> October 2019</p>
         <p><strong>Actors:</strong> Lazarus Group (North Korean state-sponsored, attributed to the Reconnaissance General Bureau)</p>
         <p><strong>Criteria Category:</strong> [To be added]</p>
-        <p><strong>Impact:</strong> Administrative network of the Kudankulam Nuclear Power Plant compromised; Dtrack malware confirmed by India's CERT; no operational or safety systems affected, but espionage access established</p>
       </div>
       <p>The Kudankulam Nuclear Power Plant (KKNPP) in Tamil Nadu is India's largest nuclear facility. In October 2019, cybersecurity researcher Pukhraj Singh publicly disclosed that the plant had been breached, citing intelligence suggesting the malware had reached "domain controller-level access" — meaning attackers could see everything on the administrative network.</p>
       <p>India's Nuclear Power Corporation (NPCIL) initially denied any compromise, then issued a statement days later confirming that Dtrack malware — a spyware tool associated with North Korea's Lazarus Group — had been found on an administrative computer. NPCIL maintained that the administrative network was air-gapped from plant control systems.</p>
@@ -103,9 +98,9 @@ document.addEventListener("DOMContentLoaded", function () {
     point4: `
       <h3>In June 2020, Iranian hackers attempted to poison Israel's water supply — hacking treatment facilities to spike chlorine to dangerous concentrations.</h3>
       <div class="attack-meta">
+        <p><strong>Date:</strong> June 2020</p>
         <p><strong>Actors:</strong> Iranian state-sponsored hackers (attributed by Israel's National Cyber Directorate)</p>
         <p><strong>Criteria Category:</strong> [To be added]</p>
-        <p><strong>Impact:</strong> Attack detected and blocked before any harm; attempt to raise chlorine to dangerous concentrations across multiple water facilities; Israel retaliated with a cyberattack on Iran's Shahid Rajaee Port in May 2020</p>
       </div>
       <p>In late April and early May 2020, attackers targeted Israeli water treatment facilities and agricultural pumping stations, attempting to manipulate the systems that control chlorine and other chemical levels in drinking water. The goal, according to Israeli officials, was to raise chlorine concentrations to levels that would cause mass illness — or to shut off water entirely to farms and towns.</p>
       <p>Israel's Water Authority detected the intrusions and issued an emergency alert to water infrastructure operators, instructing them to manually verify chemical dosing systems and change remote access credentials immediately. The attacks were blocked before causing harm. Israeli officials publicly attributed the attack to Iran, in the context of an escalating cyber conflict between the two countries.</p>
@@ -121,9 +116,9 @@ document.addEventListener("DOMContentLoaded", function () {
     point5: `
       <h3>In May 2023, US agencies revealed that Chinese state hackers had been quietly living inside American critical infrastructure networks for years — not to destroy anything yet, but to be ready.</h3>
       <div class="attack-meta">
+        <p><strong>Date:</strong> May 2023</p>
         <p><strong>Actors:</strong> Volt Typhoon (Chinese state-sponsored APT, attributed to the PRC MSS/PLA; also called Bronze Silhouette)</p>
         <p><strong>Criteria Category:</strong> [To be added]</p>
-        <p><strong>Impact:</strong> Pre-positioned access across US communications, energy, transportation, water, and defense sectors; present in some networks for 5+ years; CISA/NSA/FBI joint advisory confirmed scope of intrusions</p>
       </div>
       <p>On May 24, 2023, CISA, the NSA, the FBI, and partner agencies from the UK, Australia, Canada, and New Zealand jointly published an advisory confirming that Volt Typhoon — a Chinese state-sponsored actor — had been operating inside US critical infrastructure networks for at least five years, in some cases undetected. The sectors targeted included communications, energy, transportation, water systems, and defense-adjacent industries.</p>
       <p>Volt Typhoon's techniques were deliberately low-profile. Rather than deploying distinctive malware, they used "living off the land" tactics — leveraging legitimate system tools already present on compromised networks, making their activity difficult to distinguish from normal administrator behavior. They established persistent access and pre-positioned themselves, but caused no immediate disruption.</p>
@@ -139,9 +134,9 @@ document.addEventListener("DOMContentLoaded", function () {
     point6: `
       <h3>In November 2023, a report revealed that 22 Danish energy companies had been simultaneously compromised in the largest cyberattack ever recorded against Danish critical infrastructure.</h3>
       <div class="attack-meta">
+        <p><strong>Date:</strong> November 2023</p>
         <p><strong>Actors:</strong> Wave 1: Sandworm (Russian GRU), exploiting a Zyxel firewall vulnerability; Wave 2: separate actor, attribution unclear</p>
         <p><strong>Criteria Category:</strong> [To be added]</p>
-        <p><strong>Impact:</strong> 22 companies compromised in coordinated waves; several forced to operate in "island mode," disconnected from the European power grid; SektorCERT described it as the most extensive attack on Danish infrastructure</p>
       </div>
       <p>The attacks occurred in two waves in May 2023, and SektorCERT — Denmark's cybersecurity organization for critical infrastructure — published a detailed report in November 2023 documenting the full scope. In the first wave, attackers exploited CVE-2023-28771, a critical vulnerability in Zyxel firewalls used by Danish energy operators. The flaw had been patched, but 22 companies had not applied the update. Attackers moved quickly from firewall access into operational technology systems.</p>
       <p>SektorCERT detected the intrusions and coordinated an emergency response. Several companies had to enter "island mode" — operating their portion of the grid in complete isolation from the broader European interconnected system — to prevent lateral spread. A second wave days later used different attack infrastructure with no clear link to the first.</p>
@@ -157,9 +152,9 @@ document.addEventListener("DOMContentLoaded", function () {
     point7: `
       <h3>On April 28, 2025, electricity vanished across Spain and Portugal in seconds — 55 million people plunged into darkness, and no one could say for certain why.</h3>
       <div class="attack-meta">
+        <p><strong>Date:</strong> April 2025</p>
         <p><strong>Actors:</strong> Under investigation — no confirmed attribution as of mid-2025</p>
         <p><strong>Criteria Category:</strong> [To be added]</p>
-        <p><strong>Impact:</strong> ~55 million people affected across the Iberian Peninsula; trains halted mid-route, hospitals on generators, ATMs offline, traffic systems failed; one of the largest blackouts in European history</p>
       </div>
       <p>At approximately 12:33 PM local time on April 28, 2025, the lights went out across Spain and Portugal nearly simultaneously. The scale was staggering — 55 million people across the Iberian Peninsula lost power. Trains stopped mid-route. Airports switched to emergency generators. Madrid's metro system ground to a halt. Hospitals activated backup power. ATMs went dark across major cities.</p>
       <p>Spain's grid operator Red Eléctrica initially attributed the event to a rare "atmospheric oscillation" — an unusual meteorological phenomenon that caused rapid fluctuations in electrical flow, triggering automatic protective shutdowns across the interconnected European grid. However, cybersecurity researchers and government officials were not satisfied with this explanation. Portugal's Prime Minister publicly stated that a cyberattack could not be ruled out. Spain's National Cryptology Centre (CCN-CERT) opened a formal investigation.</p>
@@ -175,9 +170,9 @@ document.addEventListener("DOMContentLoaded", function () {
     point8: `
       <h3>In January 2026, Venezuela experienced a major nationwide blackout — the latest in a long pattern of infrastructure failures that officials have repeatedly, and controversially, blamed on foreign cyberattacks.</h3>
       <div class="attack-meta">
+        <p><strong>Date:</strong> January 2026</p>
         <p><strong>Actors:</strong> Under investigation; Venezuelan government has previously attributed blackouts to US cyberoperations, claims disputed by independent analysts</p>
         <p><strong>Criteria Category:</strong> [To be added]</p>
-        <p><strong>Impact:</strong> Widespread power loss across Venezuela; details of the January 2026 event are still emerging</p>
       </div>
       <p>Venezuela has experienced some of the most severe infrastructure failures of any country in the Western Hemisphere over the past decade. The most significant was the March 2019 blackout, which left most of the country without power for days — including hospitals, water pumping stations, and food supply chains. President Nicolás Maduro attributed the outage to a US cyberattack on the Guri hydroelectric dam, the country's primary power source. Independent engineers and cybersecurity researchers largely pointed instead to chronic underinvestment, equipment degradation, and poor maintenance.</p>
       <p>The dispute over attribution reflects a broader challenge: Venezuela's electrical infrastructure has been so severely neglected that distinguishing a deliberate cyberattack from ordinary systemic failure is genuinely difficult. Repeated blackouts have become normalized. The human cost is severe — patients on life support, food spoilage, water system failures — but the cause in any given incident is contested.</p>
@@ -191,55 +186,15 @@ document.addEventListener("DOMContentLoaded", function () {
     `,
 
     arrowTaiwan: `
-      <h3>Taiwan is the most persistently targeted nation in the world for Chinese cyber operations — facing millions of intrusion attempts daily as China builds the capability to dominate in a potential conflict.</h3>
-      <div class="attack-meta">
-        <p><strong>Actors:</strong> Multiple Chinese state-sponsored APTs — APT40/Brass Typhoon (MSS), Volt Typhoon (PLA), APT41, Salt Typhoon, and others operating in coordination</p>
-        <p><strong>Criteria Category:</strong> [To be added]</p>
-        <p><strong>Impact:</strong> Government ministries, military networks, telecom providers, research institutions, and financial infrastructure continuously targeted; espionage, data theft, and pre-positioning for potential conflict documented across multiple years</p>
-      </div>
-      <p>Taiwan's Ministry of Digital Affairs (MODA) has reported that government networks face an average of 2.4 million cyberattack attempts per day, with a sharp increase around geopolitically sensitive moments — military exercises, elections, diplomatic events. The attacks are not random. They are systematic, persistent, and coordinated across multiple Chinese intelligence and military units.</p>
-      <p>The targets follow a strategic logic. Telecom infrastructure is compromised for signals intelligence. Government ministries handling cross-strait policy, defense procurement, and foreign affairs are targeted for political intelligence. Critical infrastructure — power grids, water systems, transport networks — is infiltrated for pre-positioning. The playbook mirrors what Volt Typhoon is doing in the United States, but against Taiwan it is more aggressive and more sustained.</p>
-      <p>Taiwanese cybersecurity officials describe the situation not as a series of discrete incidents but as a continuous, years-long campaign. The goal is not necessarily to cause disruption today — it is to establish deep enough access that in the event of a military crisis, China could simultaneously attack Taiwan's communications, infrastructure, and decision-making systems, overwhelming the island's ability to respond. What is happening to Taiwan is not a preview. It is already happening.</p>
-      <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
-      <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
-        <li>Taiwan Ministry of Digital Affairs. (2024). <em>Annual Cybersecurity Threat Report.</em></li>
-        <li>Mandiant / Google Threat Intelligence. (2024). <em>APT40 Advisory: PRC MSS-Sponsored Targeting of Taiwan.</em></li>
-        <li>CISA et al. (2024). <em>Advisory AA24-190A: PRC State-Sponsored Actors Compromise and Maintain Persistent Access to US Critical Infrastructure.</em></li>
-      </ol></div></div>
+      <h3>Persistent Attacks Against Taiwan</h3>
+      <p>[for V2]</p>
     `,
 
     arrowRussia: `
-      <h3>Russian state actors have been quietly inside US critical infrastructure for years — not to flip switches today, but to be ready the moment a geopolitical crisis demands it.</h3>
-      <div class="attack-meta">
-        <p><strong>Actors:</strong> Sandworm (GRU Unit 74455), Energetic Bear/Dragonfly (FSB), Fancy Bear (GRU APT28), Cozy Bear (SVR APT29)</p>
-        <p><strong>Criteria Category:</strong> [To be added]</p>
-        <p><strong>Impact:</strong> Confirmed access to US energy, water, nuclear, and manufacturing sectors; CISA has issued repeated warnings since 2018; some intrusions reached the point where attackers had hands on operational controls</p>
-      </div>
-      <p>In March 2018, the Department of Homeland Security and FBI jointly confirmed that Russian government actors had been conducting a multi-stage intrusion campaign against US energy, nuclear, water, aviation, and manufacturing sectors since at least 2016. Attackers used spear-phishing and watering-hole attacks to compromise trusted third-party vendors, then pivoted into the operational technology networks of their actual targets — a method that bypasses perimeter defenses by entering through trusted suppliers.</p>
-      <p>In some documented cases, attackers had progressed far enough into energy systems that they could have caused disruptions — they had hands on the switches. A 2019 Government Accountability Office report found that the Department of Energy had not fully addressed known cybersecurity risks to the grid's distribution systems. CISA's 2022 advisory on Russian state threats listed energy infrastructure as a primary target and warned that access established in prior years may still be present.</p>
-      <p>The strategic logic is not immediate destruction but deterrence and leverage: the demonstrated ability to shut down US infrastructure during a geopolitical crisis — over Ukraine, Taiwan, or any other flashpoint. Security researchers call this "pre-positioning." The threat is not hypothetical. It is documented, ongoing, and the gap between access and action is narrower than public reporting typically acknowledges. The question is not whether Russia can reach US critical infrastructure. They already have.</p>
-      <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
-      <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
-        <li>DHS &amp; FBI. (2018). <em>Alert TA18-074A: Russian Government Cyber Activity Targeting Energy and Other Critical Infrastructure Sectors.</em></li>
-        <li>GAO. (2019). <em>Electricity Grid Cybersecurity: DOE Needs to Ensure Its Plans Fully Address Risks to Distribution Systems.</em> GAO-19-332.</li>
-        <li>CISA. (2022). <em>Alert AA22-011A: Understanding and Mitigating Russian State-Sponsored Cyber Threats to US Critical Infrastructure.</em></li>
-      </ol></div></div>
+      <h3>The US is Next</h3>
+      <p>[for V2]</p>
     `,
 
-  };
-
-  // === VIDEOS FOR EACH TIMELINE POINT ===
-  const videos = {
-    point1: '',
-    point2: '',
-    point3: '',
-    point4: '',
-    point5: '',
-    point6: '',
-    point7: '',
-    point8: '',
-    arrowTaiwan: '',
-    arrowRussia: '',
   };
 
   // === SHARED: Open mini-page with content ===
@@ -259,7 +214,6 @@ document.addEventListener("DOMContentLoaded", function () {
     miniContent.scrollTop = 0;
 
     const newColor = adjustColor(element.style.getPropertyValue('--color'));
-    const newSrc = videos[pointId];
 
     miniPage.classList.add('active');
     timeline.classList.add('shift-left');
@@ -271,19 +225,6 @@ document.addEventListener("DOMContentLoaded", function () {
       backButton.style.opacity = '0.5';
     }
 
-    if (newSrc && video) {
-      video.style.opacity = 0;
-      setTimeout(() => {
-        video.src = newSrc;
-        video.load();
-        video.oncanplay = () => {
-          video.play().catch(err => console.error("Video play error:", err));
-          video.style.opacity = 1;
-        };
-      }, 50);
-    }
-
-    if (overlay) overlay.style.background = newColor;
     body.style.background = newColor;
     document.activeElement.blur();
   }
@@ -308,7 +249,6 @@ document.addEventListener("DOMContentLoaded", function () {
     point.addEventListener("mouseleave", function () {
       infoBox.style.display = "none";
       if (!timelinePointSelected) {
-        if (overlay) overlay.style.background = "rgba(244, 244, 244, 0.5)";
         body.style.background = "#000000";
       }
     });
@@ -323,14 +263,12 @@ document.addEventListener("DOMContentLoaded", function () {
     arrow.addEventListener("mouseenter", function () {
       if (!this.classList.contains("selected") && !timelinePointSelected) {
         const newColor = adjustColor(this.style.getPropertyValue('--color'));
-        if (overlay) overlay.style.background = newColor;
         body.style.background = newColor;
       }
     });
 
     arrow.addEventListener("mouseleave", function () {
       if (!timelinePointSelected) {
-        if (overlay) overlay.style.background = "rgba(244, 244, 244, 0.5)";
         body.style.background = "#000000";
       }
     });
@@ -372,14 +310,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const allClickable = [...timelinePoints, ...timelineArrows];
     allClickable.forEach(p => p.classList.remove('selected'));
-
-    if (overlay) overlay.style.background = "rgba(244, 244, 244, 0.5)";
-
-    if (video) {
-      video.src = 'videos/default.mp4';
-      video.load();
-      video.play();
-    }
 
     body.style.background = "#000000";
   }
