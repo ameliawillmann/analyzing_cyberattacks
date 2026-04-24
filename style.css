@@ -204,7 +204,7 @@ a:hover {
 
 .rubric-table th:last-child,
 .rubric-table td:last-child {
-  width: 300px;
+  width: 400px;
 }
 
 .rubric-table th {
@@ -224,10 +224,6 @@ a:hover {
   vertical-align: top;
 }
 
-.rubric-table tr:nth-child(even) td {
-  background: #0d0d0d;
-}
-
 /* === Rubric Level Labels === */
 .rubric-level {
   font-weight: normal;
@@ -235,12 +231,20 @@ a:hover {
   white-space: nowrap;
 }
 
-.rubric-level.negligible   { color: #ffffff; }
-.rubric-level.low          { color: #2980b9; }
-.rubric-level.medium       { color: #27ae60; }
-.rubric-level.high         { color: #f1c40f; }
-.rubric-level.severe       { color: #e74c3c; }
-.rubric-level.crisis       { color: #aaaaaa; }
+.rubric-level.negligible { color: #ffffff; }
+.rubric-level.low        { color: #8e44ad; }
+.rubric-level.medium     { color: #2980b9; }
+.rubric-level.high       { color: #27ae60; }
+.rubric-level.severe     { color: #f1c40f; }
+.rubric-level.crisis     { color: #e74c3c; }
+
+/* === Rubric Row Background Colors === */
+tr:has(.rubric-level.negligible) td { background: rgba(255,255,255,0.10); }
+tr:has(.rubric-level.low)        td { background: rgba(142,68,173,0.12); }
+tr:has(.rubric-level.medium)     td { background: rgba(41,128,185,0.12); }
+tr:has(.rubric-level.high)       td { background: rgba(39,174,96,0.12); }
+tr:has(.rubric-level.severe)     td { background: rgba(241,196,15,0.12); }
+tr:has(.rubric-level.crisis)     td { background: rgba(231,76,60,0.12); }
 
 /* === Visualization Placeholder === */
 .viz-placeholder {
