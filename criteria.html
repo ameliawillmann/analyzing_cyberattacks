@@ -3,24 +3,6 @@
   CRITERIA PAGE — NOTES
   ============================================================
 
-  HOW I BUILT THE RUBRIC:
-
-
-  RUBRIC CATEGORIES EXPLAINED:
-  - Targets:
-  - Actors:
-  - Infrastructure:
-  - Success:
-  - Potential Impact:
-
-  LIMITATIONS:
-  1.
-  2.
-  3.
-
-  SOURCES:
-  -
-  -
   ============================================================
 -->
 <!DOCTYPE html>
@@ -50,70 +32,77 @@
 
     <div class="content-block">
       <h2>Rubric</h2>
-      <p>[How I created the rubric ...]</p>
+      <p>Based on a comprehensive analysis of how international organizations and governments score cyberattacks, this rubric was created specifically rate cyberattacks on critical infrastructure.</p>
+      <p>Please note: not every criterion must be met to be classified within a given tier. The criteria serve as a guideline to align the attack with the most appropriate severity level.</p>
 
       <table class="rubric-table">
         <thead>
           <tr>
             <th>Level</th>
             <th>Description</th>
-            <th>Potential Impact</th>
             <th>Success</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td class="rubric-level negligible">Negligible</td>
-            <td>[Description]</td>
-            <td>[Description]</td>
-            <td>[Description]</td>
+            <td>Single or isolated attempt with no meaningful access gained.<br>No indication of strategic intent.</td>
+            <td>Unsuccessful.<br>Insignificant potential impact.</td>
           </tr>
           <tr>
             <td class="rubric-level low">Low</td>
-            <td>[Description]</td>
-            <td>[Description]</td>
-            <td>[Description]</td>
+            <td>Limited attempts.<br>Access limited to IT systems.<br>Low sensitivity data.<br>No disruption to civilian services.</td>
+            <td>Limited Success.<br>?? potential impact.</td>
           </tr>
           <tr>
             <td class="rubric-level medium">Medium</td>
-            <td>[Description]</td>
-            <td>[Description]</td>
-            <td>[Description]</td>
+            <td>Few attempts.<br>Partial.<br>Resolved within 24 hours.<br>Minor, contained impact on functions and services.</td>
+            <td>Moderate Success.<br>?? potential impact.</td>
           </tr>
           <tr>
             <td class="rubric-level high">High</td>
-            <td>[Description]</td>
-            <td>[Description]</td>
-            <td>[Description]</td>
+            <td>Repetitive attempts.<br>Millions of.<br>Significant risk.<br>Lasted longer than 24 hours.<br>Part of a broader coordinated campaign or operation.</td>
+            <td>Successful.<br>Likely recoverable.<br>Could have significant impact on civilian everyday life and public health.</td>
           </tr>
           <tr>
             <td class="rubric-level severe">Severe</td>
-            <td>[Description]</td>
-            <td>[Description]</td>
-            <td>[Description]</td>
+            <td>Repetitive attempts.<br>Not recoverable.<br>Significant impact on civilian everyday life and public health.<br>Classified or critical data compromised.<br>Part of sustained campaign against critical infrastructure.</td>
+            <td>Successful.<br>Likely not recoverable.</td>
           </tr>
           <tr>
             <td class="rubric-level crisis">Crisis</td>
-            <td>[Description]</td>
-            <td>[Description]</td>
-            <td>[Description]</td>
+            <td>Repetitive attempts.<br>Lasted longer than 4.<br>Part of sustained campaign against critical infrastructure.<br>Mass civilian causalities possible.<br>Cascading failure across sectors.</td>
+            <td>Successful.<br>Not recoverable.</td>
           </tr>
         </tbody>
       </table>
+
+      <button class="view-sources-btn" onclick="toggleFootnotesById('rubricSources', this)">View Sources</button>
+      <div class="footnotes-wrapper" id="rubricSources">
+        <div class="footnotes">
+          <ol>
+            <li><a href="https://www.cisa.gov/news-events/news/cisa-national-cyber-incident-scoring-system-nciss" target="_blank">https://www.cisa.gov/news-events/news/cisa-national-cyber-incident-scoring-system-nciss</a></li>
+            <li><a href="https://www.sciencedirect.com/science/article/pii/S0167404824003791" target="_blank">https://www.sciencedirect.com/science/article/pii/S0167404824003791</a></li>
+            <li><a href="https://internetpolicy.mit.edu/cyber-severity-score-2025/" target="_blank">https://internetpolicy.mit.edu/cyber-severity-score-2025/</a></li>
+            <li><a href="https://www.csis.org/analysis/cyberattack-severity-classification-framework-republic-korea" target="_blank">https://www.csis.org/analysis/cyberattack-severity-classification-framework-republic-korea</a></li>
+            <li><a href="https://safe.security/resources/insights/understanding-cvss-scores/#How-is-a-CVSS-score-calculated" target="_blank">https://safe.security/resources/insights/understanding-cvss-scores/#How-is-a-CVSS-score-calculated</a></li>
+          </ol>
+        </div>
+      </div>
     </div>
 
     <div class="content-block">
       <h2>Limitations</h2>
-      <p>[Limitation 1 ...]</p>
-      <p>[Limitation 2 ...]</p>
-      <p>[Limitation 3 ...]</p>
+      <p><strong>Lack of Information!</strong><p>
+      <p>The public information about cyberattacks on critical infrastructure is limited because everyone is choosing if and when they want to report the cyberattack. Companies are not being held responsible for informing their clients and customers of data breaches. Additionally, government agencies strategically decide when they admit they’ve been hacked or take responsibility for an attack. It is the game of geopolitics. For example, Chinese Hacktivists will hack the Taiwanese government (as it frequently does), Taiwan will blame China for the attack, China will deny responsibility, and the cycle continues. On occasion, global powers will hint at certain attacks, usually bragging about its nation’s capabilities to incite fear. </p>
+      <p>Overall, information sharing about cybersecurity is complicated because of the risk publicly exposing vulnerabilities poses. The reporting and responsibility blaming and claiming is purely strategic between foreign entities and adversaries on the international stage.</p>
 
       <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
       <div class="footnotes-wrapper" id="footnotesWrapper">
         <div class="footnotes">
           <ol>
-            <li>[Source 1]</li>
-            <li>[Source 2]</li>
+            <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5358372/" target="_blank">https://pmc.ncbi.nlm.nih.gov/articles/PMC5358372/</a></li>
+            <li><a href="https://time.com/7209611/data-breaches-increase/" target="_blank">https://time.com/7209611/data-breaches-increase/</a></li>
           </ol>
         </div>
       </div>

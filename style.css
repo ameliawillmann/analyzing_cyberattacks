@@ -202,6 +202,11 @@ a:hover {
   font-size: 1rem;
 }
 
+.rubric-table th:last-child,
+.rubric-table td:last-child {
+  width: 300px;
+}
+
 .rubric-table th {
   background: #161616;
   color: var(--text-headings);
