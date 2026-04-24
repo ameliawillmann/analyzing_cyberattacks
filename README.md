@@ -3,7 +3,7 @@
 Welcome to my Capstone Project! This was completed as part of Northeastern's INTL4700 course with Professor Denis Sullivan.
 
 AI Usage:
-I leveraged Claude Code to build upon my Data Science skills and develop the code for this website. While AI was used to edit my work, the writing is my own to preserve my voice and creative spirit.
+I leveraged Claude Code to build upon my Data Science skills, develop the code for this website, and review/edit my writing.
 
 AI Certification:
 No AI-generated content was included in this project without my thorough revision,
