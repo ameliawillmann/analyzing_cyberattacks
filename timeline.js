@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const content = {
 
     point1: `
-      <h3>The world’s first cyber weapon.</h3>
+      <h3>The world’s first cyber weapon</h3>
       <div class="attack-meta">
         <p><strong>Date:</strong> June 2010</p>
         <p><strong>Actors:</strong> United States & Israel joint operation targeting Iran</p>
@@ -60,128 +60,125 @@ document.addEventListener("DOMContentLoaded", function () {
     `,
 
     point2: `
-      <h3>On December 23, 2015, 230,000 Ukrainians lost power — the first confirmed cyberattack in history to cause a blackout.</h3>
+      <h3>First confirmed cyber operation to successfully attack energy infrastructure</h3>
       <div class="attack-meta">
         <p><strong>Date:</strong> December 2015</p>
-        <p><strong>Actors:</strong> Sandworm Team (attributed to Russian GRU Unit 74455)</p>
+        <p><strong>Actors:</strong> Sandworm (associated with Russia's GRU) targeting Ukraine</p>
         <p><strong>Criteria Category:</strong> [To be added]</p>
       </div>
-      <p>The attack began months earlier with spear-phishing emails sent to energy company employees. Malicious Word documents containing BlackEnergy malware gave attackers persistent access to IT networks. Over months, they silently moved deeper — mapping the SCADA systems that controlled the physical power grid.</p>
-      <p>On December 23, the attackers struck simultaneously across three regional energy companies. They remotely opened breakers to cut power, deployed KillDisk to wipe and brick infected workstations, and flooded customer service lines with fake calls to delay the response. Operators watched their cursors move on their own screens — completely locked out, unable to intervene.</p>
-      <p>Power was eventually restored manually, but the attack set a precedent that could not be walked back. A second, more sophisticated attack struck Ukraine's capital grid in December 2016. The same group, Sandworm, later deployed NotPetya in 2017 — a wiper disguised as ransomware that caused an estimated $10 billion in global damage.</p>
+      <p>The 2015 power grid attack was the first of two widely publicized attacks against Ukraine critical infrastructure. The 2015 attack started with spear-phishing emails and malicious Microsoft Word files carrying BlackEnergy malware. This malware gave the attackers access to industrial control systems which controlled power delivery operations. In December, the attackers struck three regional electric power distribution companies, impacting about 225,000 customers. It was a calculated and coordinated attack taking out each company within 30 minutes of each other. After the attack, the attackers also deployed KillDisk malware to wipe files on the targeted systems and overall corrupt the systems to be inoperable.</p>
+      <p>The 2016 attack built on the 2015 attack. It was more automated, with the code manipulations built right into the malware. Therefore, it was also ore scalable. Despite no major outages, Ukrainian grid operators had to manually close breakers at affected stations to restore electricity. The attackers made it significantly harder for the companies to recover. These attacks are part of the persistent cyberoperations that GRU has conducted against Ukraine. Over the past decade, attacks have grown increasingly complex, harder to detect, and more damaging.</p>
       <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
       <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
-        <li>Zetter, K. (2016). "Inside the Cunning, Unprecedented Hack of Ukraine's Power Grid." <em>Wired.</em></li>
-        <li>ICS-CERT. (2016). <em>Cyber-Attack Against Ukrainian Critical Infrastructure.</em> Alert IR-ALERT-H-16-056-01.</li>
-        <li>Dragos Inc. (2017). <em>CRASHOVERRIDE: Analysis of the Threat to Electric Grid Operations.</em></li>
+        <li><a href="https://www.cisa.gov/news-events/ics-alerts/ir-alert-h-16-056-01" target="_blank">https://www.cisa.gov/news-events/ics-alerts/ir-alert-h-16-056-01</a></li>
+        <li><a href="https://www.cfr.org/cyber-operations/compromise-of-a-power-grid-in-eastern-ukraine" target="_blank">https://www.cfr.org/cyber-operations/compromise-of-a-power-grid-in-eastern-ukraine</a></li>
+        <li><a href="https://www.congress.gov/crs-product/R48067" target="_blank">https://www.congress.gov/crs-product/R48067</a></li>
       </ol></div></div>
     `,
 
     point3: `
-      <h3>In October 2019, North Korean malware was found on the administrative network of India's largest nuclear power plant — a breach the government initially denied.</h3>
+      <h3>Nuclear power plants are not as secure as we thought</h3>
       <div class="attack-meta">
-        <p><strong>Date:</strong> October 2019</p>
-        <p><strong>Actors:</strong> Lazarus Group (North Korean state-sponsored, attributed to the Reconnaissance General Bureau)</p>
+        <p><strong>Date:</strong> September 2019</p>
+        <p><strong>Actors:</strong> Targeted India. Unconfirmed attackers but possibly caused by a variant of the DTRACK virus that was developed by the North Korea-linked Lazarus group.</p>
         <p><strong>Criteria Category:</strong> [To be added]</p>
       </div>
-      <p>The Kudankulam Nuclear Power Plant (KKNPP) in Tamil Nadu is India's largest nuclear facility. In October 2019, cybersecurity researcher Pukhraj Singh publicly disclosed that the plant had been breached, citing intelligence suggesting the malware had reached "domain controller-level access" — meaning attackers could see everything on the administrative network.</p>
-      <p>India's Nuclear Power Corporation (NPCIL) initially denied any compromise, then issued a statement days later confirming that Dtrack malware — a spyware tool associated with North Korea's Lazarus Group — had been found on an administrative computer. NPCIL maintained that the administrative network was air-gapped from plant control systems.</p>
-      <p>The attack raised uncomfortable questions. Even if operational systems were isolated, an administrative breach at a nuclear facility gives adversaries detailed knowledge of plant layouts, personnel, schedules, and procurement — intelligence that could support a future, more targeted attack. Nuclear infrastructure had long been considered uniquely secure. Kudankulam complicated that assumption.</p>
+      <p>The Kudankulam Nuclear Power Plant (KKNPP) in Tamil Nadu is India's largest nuclear facility. In September 2019, the plant suffered a cyberattack. At first, KKNPP plant officials denied that it was a cyberattack, officially stating that "any cyberattack on the Nuclear Power Plant Control System is not possible."</p>
+      <p>About a month later, the Nuclear Power Corporation Of India Limited (NPCIL) publicly confirmed it was a cyberattack that was first noticed in early September by CERT-In (Indian Computer Emergency Response Team). Investigations revealed that a user had connected a malware-infected personal computer to the plant's administrative network. The administrative network was completely compromised. While the plant's operational network and systems are not connected to the administrative network, a large amount of data from the KKNPP's administrative network was still stolen.</p>
+      <p>There was no critical harm this time, but it is no secret that attacking a nuclear power plant can be catastrophic. Prior to this attack, it was understood that the "air gap" security strategy, which involves physical isolating computer or local networks from the Internet to prevent external breaches, were secure. However, this attack proved to government agencies around the world that air-gapped nuclear facilities can still be targeted and hacked. It also sparked worldwide discussions about what could have happened, and the destruction potential involved with hacking nuclear power plants.</p>
       <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
       <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
-        <li>India CERT-In. (2019). <em>Malware Detection at Kudankulam Nuclear Power Plant.</em></li>
-        <li>Kaspersky Lab. (2019). <em>Dtrack: New Lazarus Tool in Critical Infrastructure.</em></li>
-        <li>Panda, A. (2019). "India's Kudankulam Nuclear Power Plant Hit by Cyberattack." <em>The Diplomat.</em></li>
+        <li><a href="https://www.washingtonpost.com/politics/2019/11/04/an-indian-nuclear-power-plant-suffered-cyberattack-heres-what-you-need-know/" target="_blank">https://www.washingtonpost.com/politics/2019/11/04/an-indian-nuclear-power-plant-suffered-cyberattack-heres-what-you-need-know/</a></li>
+        <li><a href="https://thebulletin.org/2019/11/lessons-from-the-cyberattack-on-indias-largest-nuclear-power-plant/" target="_blank">https://thebulletin.org/2019/11/lessons-from-the-cyberattack-on-indias-largest-nuclear-power-plant/</a></li>
+        <li><a href="https://www.reuters.com/sustainability/boards-policy-regulation/india-shuts-unit-countrys-largest-nuclear-power-plant-maintenance-2025-08-11/" target="_blank">https://www.reuters.com/sustainability/boards-policy-regulation/india-shuts-unit-countrys-largest-nuclear-power-plant-maintenance-2025-08-11/</a></li>
       </ol></div></div>
     `,
 
     point4: `
-      <h3>In June 2020, Iranian hackers attempted to poison Israel's water supply — hacking treatment facilities to spike chlorine to dangerous concentrations.</h3>
+      <h3>The potential of poison through cyberoperations</h3>
       <div class="attack-meta">
-        <p><strong>Date:</strong> June 2020</p>
-        <p><strong>Actors:</strong> Iranian state-sponsored hackers (attributed by Israel's National Cyber Directorate)</p>
+        <p><strong>Date:</strong> April 2020</p>
+        <p><strong>Actors:</strong> Iran targeting Israel (Iran declined involvement)</p>
         <p><strong>Criteria Category:</strong> [To be added]</p>
       </div>
-      <p>In late April and early May 2020, attackers targeted Israeli water treatment facilities and agricultural pumping stations, attempting to manipulate the systems that control chlorine and other chemical levels in drinking water. The goal, according to Israeli officials, was to raise chlorine concentrations to levels that would cause mass illness — or to shut off water entirely to farms and towns.</p>
-      <p>Israel's Water Authority detected the intrusions and issued an emergency alert to water infrastructure operators, instructing them to manually verify chemical dosing systems and change remote access credentials immediately. The attacks were blocked before causing harm. Israeli officials publicly attributed the attack to Iran, in the context of an escalating cyber conflict between the two countries.</p>
-      <p>The incident highlighted a critical vulnerability: water treatment infrastructure is often managed by small municipal operators with limited cybersecurity resources, connected to the internet through aging systems never designed with modern threats in mind. The attack marked the first time a nation-state had directly attempted to poison a country's water supply through a cyberattack.</p>
+      <p>In April 2020, the Israel Water Authority detected that chlorine and other chemical levels in its water supply were abnormal and alerted Israel's National Cyber Directorate. The Israel Water Authority was able to mitigate the crisis before any real damage had occurred, but there was potential for chlorine or other chemicals to be mixed into the water in harmful proportions. The increase chlorine concentrations could have caused serious illness. The increase in chemical levels could have also triggered a fail-safe, shutting off the water supply to thousands of residents during a heatwave. Investigations later revealed the attackers were targeting computers that control water flow and wastewater treatment for rural communities in Israel.</p>
+      <p>It is worth noting that this was not unprompted. Israel and Iran consistently hack into each other's critical infrastructure networks and systems. However, this attack exposed a critical vulnerability that could have caused mass harm. While unsuccessful, the attack could have potentially poisoned a country's water supply. This was one of the first major cyberattacks on critical infrastructure that would have caused mass harm to the civilians of the targeted nation.</p>
       <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
       <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
-        <li>Haaretz. (2020). "Israel Says It Thwarted Cyberattack on Water Systems." <em>Haaretz.</em></li>
-        <li>Zilberman, P. (2020). "The Cyber Attack on Israel's Water Infrastructure." <em>INSS Insight No. 1316.</em></li>
-        <li>Sanger, D. & Mozur, P. (2020). "Water Wars: How a Cyberattack Could Cripple Israel." <em>New York Times.</em></li>
+        <li><a href="https://www.timesofisrael.com/iran-cyberattack-on-israels-water-supply-could-have-sickened-hundreds-report/" target="_blank">https://www.timesofisrael.com/iran-cyberattack-on-israels-water-supply-could-have-sickened-hundreds-report/</a></li>
+        <li><a href="https://www.timesofisrael.com/after-alleged-iranian-cyberattack-israels-water-authority-beefs-up-defenses/" target="_blank">https://www.timesofisrael.com/after-alleged-iranian-cyberattack-israels-water-authority-beefs-up-defenses/</a></li>
+        <li><a href="https://www.washingtonpost.com/national-security/intelligence-officials-say-attempted-cyberattack-on-israeli-water-utilities-linked-to-iran/2020/05/08/f9ab0d78-9157-11ea-9e23-6914ee410a5f_story.html" target="_blank">https://www.washingtonpost.com/national-security/intelligence-officials-say-attempted-cyberattack-on-israeli-water-utilities-linked-to-iran/2020/05/08/f9ab0d78-9157-11ea-9e23-6914ee410a5f_story.html</a></li>
       </ol></div></div>
     `,
 
     point5: `
-      <h3>In May 2023, US agencies revealed that Chinese state hackers had been quietly living inside American critical infrastructure networks for years — not to destroy anything yet, but to be ready.</h3>
+      <h3>This Land is Your Land, This Land is China's Land</h3>
       <div class="attack-meta">
         <p><strong>Date:</strong> May 2023</p>
-        <p><strong>Actors:</strong> Volt Typhoon (Chinese state-sponsored APT, attributed to the PRC MSS/PLA; also called Bronze Silhouette)</p>
+        <p><strong>Actors:</strong> Chinese state-sponsored actor Volt Typhoon targeted US</p>
         <p><strong>Criteria Category:</strong> [To be added]</p>
       </div>
-      <p>On May 24, 2023, CISA, the NSA, the FBI, and partner agencies from the UK, Australia, Canada, and New Zealand jointly published an advisory confirming that Volt Typhoon — a Chinese state-sponsored actor — had been operating inside US critical infrastructure networks for at least five years, in some cases undetected. The sectors targeted included communications, energy, transportation, water systems, and defense-adjacent industries.</p>
-      <p>Volt Typhoon's techniques were deliberately low-profile. Rather than deploying distinctive malware, they used "living off the land" tactics — leveraging legitimate system tools already present on compromised networks, making their activity difficult to distinguish from normal administrator behavior. They established persistent access and pre-positioned themselves, but caused no immediate disruption.</p>
-      <p>The stated purpose, according to US intelligence assessments, was not espionage in the traditional sense but pre-positioning: building the capability to disrupt or destroy US infrastructure during a potential military confrontation over Taiwan. The goal was leverage — the ability to threaten or execute simultaneous infrastructure attacks that would paralyze US response capabilities at a critical moment.</p>
+      <p>In May 2023, CISA, NSA, FBI, and intelligence agencies from other countries confirmed that Volt Typhoon, a Chinese state-sponsored actor, had been operating mostly undetected inside US critical infrastructure networks for at least 5 years. However, the actors caused no immediate disruption or damage. Why? The US called it "pre-positioning"—building capabilities and positioning themselves in networks or systems to destroy critical infrastructure in the event of a major crisis or conflict with the US.</p>
+      <p>This is also known as the "living-off-the-land" technique.</p>
+      <p>The US agencies confirmed that Volt Typhoon had compromised the IT systems of the critical infrastructure in primarily communications, energy, transportation systems, water and wastewater systems sectors. Microsoft identified the malicious activity that was focused on credential access network system discovery at critical infrastructure organizations. The attack seemed centered on information gathering. However, it is inferred that a military confrontation over Taiwan would prompt Volt Typhoon to paralyze US response capabilities through critical infrastructure destruction.</p>
       <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
       <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
-        <li>CISA, NSA, FBI et al. (2023). <em>Advisory AA23-144A: Volt Typhoon — A State-Sponsored Cyber Actor Living off the Land.</em></li>
-        <li>CISA. (2024). <em>Advisory AA24-038A: PRC State-Sponsored Actors Compromise and Maintain Persistent Access to US Critical Infrastructure.</em></li>
-        <li>Nakashima, E. (2023). "China's Volt Typhoon hacking group could strike US infrastructure, officials warn." <em>Washington Post.</em></li>
+        <li><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a" target="_blank">https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a</a></li>
+        <li><a href="https://www.microsoft.com/en-us/security/blog/2023/05/24/volt-typhoon-targets-us-critical-infrastructure-with-living-off-the-land-techniques/" target="_blank">https://www.microsoft.com/en-us/security/blog/2023/05/24/volt-typhoon-targets-us-critical-infrastructure-with-living-off-the-land-techniques/</a></li>
       </ol></div></div>
     `,
 
     point6: `
-      <h3>In November 2023, a report revealed that 22 Danish energy companies had been simultaneously compromised in the largest cyberattack ever recorded against Danish critical infrastructure.</h3>
+      <h3>Large-scale attack on Danish energy sector</h3>
       <div class="attack-meta">
-        <p><strong>Date:</strong> November 2023</p>
-        <p><strong>Actors:</strong> Wave 1: Sandworm (Russian GRU), exploiting a Zyxel firewall vulnerability; Wave 2: separate actor, attribution unclear</p>
+        <p><strong>Date:</strong> May 2023</p>
+        <p><strong>Actors:</strong> Targeted Denmark. Unconfirmed attackers but Russia's GRU suspected.</p>
         <p><strong>Criteria Category:</strong> [To be added]</p>
       </div>
-      <p>The attacks occurred in two waves in May 2023, and SektorCERT — Denmark's cybersecurity organization for critical infrastructure — published a detailed report in November 2023 documenting the full scope. In the first wave, attackers exploited CVE-2023-28771, a critical vulnerability in Zyxel firewalls used by Danish energy operators. The flaw had been patched, but 22 companies had not applied the update. Attackers moved quickly from firewall access into operational technology systems.</p>
-      <p>SektorCERT detected the intrusions and coordinated an emergency response. Several companies had to enter "island mode" — operating their portion of the grid in complete isolation from the broader European interconnected system — to prevent lateral spread. A second wave days later used different attack infrastructure with no clear link to the first.</p>
-      <p>The report drew attention to a persistent problem in critical infrastructure globally: known, patchable vulnerabilities sitting unaddressed in systems that operators are reluctant to update because downtime carries its own operational risks. The Danish attack was a direct, documented warning to European energy operators — and the rest of the world — about the cost of delayed patching.</p>
+      <p>May 2023 saw the largest cyberattack ever recorded against Danish critical infrastructure. 22 companies which operate Danish energy infrastructure were compromised. SektorCERT, Denmark's network of essential entities operating critical infrastructure, detected the attack. Its monitoring picked up on the simultaneous multi-target attacks.</p>
+      <p>Prior to the attack, Zyxel had identified a critical vulnerability in its firewalls that many members used. An attacker could exploit the Zyxel firewall and gain complete control of the firewall without knowing either usernames or passwords for the device. An update was issued, but not all the companies applied the update immediately. Therefore, the attackers compromised 11 companies immediately in the first wave. A few weeks later, the attackers executed a second wave of attacks, exploiting two unknown vulnerabilities in the firewall. Several companies were forced to operate in complete isolation of the grid until the companies could secure their systems. Although no significant damage resulted, the attack exposed the systemic vulnerabilities within Denmark's energy sector. And how crucial it is to apply updates that patch vulnerabilities immediately.</p>
       <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
       <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
-        <li>SektorCERT. (2023). <em>The Attack Against Danish Critical Infrastructure.</em> SektorCERT Report.</li>
-        <li>Greenberg, A. (2023). "Hackers Hit 22 Danish Energy Firms in Largest Attack on That Country's Critical Infrastructure." <em>Wired.</em></li>
-        <li>CISA. (2023). <em>Advisory: Zyxel Firewalls Exploited by Threat Actors (CVE-2023-28771).</em></li>
+        <li><a href="https://stateofgreen.com/en/solutions/the-cyber-resilience-of-danish-critical-infrastructure/" target="_blank">https://stateofgreen.com/en/solutions/the-cyber-resilience-of-danish-critical-infrastructure/</a></li>
+        <li><a href="https://sektorcert.dk/wp-content/uploads/2023/11/SektorCERT-The-attack-against-Danish-critical-infrastructure-TLP-CLEAR.pdf" target="_blank">https://sektorcert.dk/wp-content/uploads/2023/11/SektorCERT-The-attack-against-Danish-critical-infrastructure-TLP-CLEAR.pdf</a></li>
       </ol></div></div>
     `,
 
     point7: `
-      <h3>On April 28, 2025, electricity vanished across Spain and Portugal in seconds — 55 million people plunged into darkness, and no one could say for certain why.</h3>
+      <h3>To be or not to be a cyberattack</h3>
       <div class="attack-meta">
         <p><strong>Date:</strong> April 2025</p>
-        <p><strong>Actors:</strong> Under investigation — no confirmed attribution as of mid-2025</p>
+        <p><strong>Actors:</strong> Targeted Spain & Portugal. Attackers unconfirmed.</p>
         <p><strong>Criteria Category:</strong> [To be added]</p>
       </div>
-      <p>At approximately 12:33 PM local time on April 28, 2025, the lights went out across Spain and Portugal nearly simultaneously. The scale was staggering — 55 million people across the Iberian Peninsula lost power. Trains stopped mid-route. Airports switched to emergency generators. Madrid's metro system ground to a halt. Hospitals activated backup power. ATMs went dark across major cities.</p>
-      <p>Spain's grid operator Red Eléctrica initially attributed the event to a rare "atmospheric oscillation" — an unusual meteorological phenomenon that caused rapid fluctuations in electrical flow, triggering automatic protective shutdowns across the interconnected European grid. However, cybersecurity researchers and government officials were not satisfied with this explanation. Portugal's Prime Minister publicly stated that a cyberattack could not be ruled out. Spain's National Cryptology Centre (CCN-CERT) opened a formal investigation.</p>
-      <p>Whether or not this was a cyberattack, the blackout exposed how a single cascading failure in interconnected infrastructure can paralyze an entire region within seconds — and how difficult it is, in the immediate aftermath, to distinguish a deliberate attack from a technical failure. In an era of documented pre-positioning in European energy infrastructure, the uncertainty itself is part of the problem.</p>
+      <p>On April 28, 2025, Spain, Portugal, and parts of France experienced nationwide power outages affecting millions of people. The lights went out, trains stopped mid-route, hospitals switched to back-up power, and ATMs shut down. The lack of electricity had a cascading effect on other critical infrastructures, such as water shortages and telecommunication networks. Panic spread across the streets.</p>
+      <p>Spain's grid operator Red Eléctrica initially attributed the outage to a rare occurrence of rapid fluctuations in electric flow that triggered the protective grid shutdowns. Investigations revealed that a problem with the power connection between France and Spain resulted in the Spanish grid being disconnected from the European grid. While Spain has publicly ruled out the possibility of a cyberattack, this would not be the first blackout caused by a cyberattack.</p>
+      <p>Nevertheless, this attack displayed the criticalness of critical infrastructure is and just how scary it is when the cause is "We don't know." Or rather, the public doesn't know …</p>
       <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
       <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
-        <li>Red Eléctrica de España. (2025). "Comunicado sobre el incidente en el sistema eléctrico peninsular."</li>
-        <li>Picheta, R. & Woodyatt, A. (2025). "Spain and Portugal hit by massive power outage." <em>CNN.</em></li>
-        <li>CCN-CERT. (2025). <em>Investigación del incidente eléctrico del 28 de abril de 2025.</em></li>
+        <li><a href="https://www.bbc.com/news/articles/czx1qp64wrno" target="_blank">https://www.bbc.com/news/articles/czx1qp64wrno</a></li>
+        <li><a href="https://www.weforum.org/stories/2025/10/dangerous-blindspot-in-infrastructure-cybersecurity/" target="_blank">https://www.weforum.org/stories/2025/10/dangerous-blindspot-in-infrastructure-cybersecurity/</a></li>
+        <li><a href="https://www.bbc.com/news/articles/cd6jenl581vo" target="_blank">https://www.bbc.com/news/articles/cd6jenl581vo</a></li>
+        <li><a href="https://www.reuters.com/world/europe/no-sign-cyberattack-grid-operator-during-spains-blackout-minister-says-2025-05-14/" target="_blank">https://www.reuters.com/world/europe/no-sign-cyberattack-grid-operator-during-spains-blackout-minister-says-2025-05-14/</a></li>
       </ol></div></div>
     `,
 
     point8: `
-      <h3>In January 2026, Venezuela experienced a major nationwide blackout — the latest in a long pattern of infrastructure failures that officials have repeatedly, and controversially, blamed on foreign cyberattacks.</h3>
+      <h3> City blackout coincidentally at the same time as a major military operation</h3>
       <div class="attack-meta">
         <p><strong>Date:</strong> January 2026</p>
-        <p><strong>Actors:</strong> Under investigation; Venezuelan government has previously attributed blackouts to US cyberoperations, claims disputed by independent analysts</p>
+        <p><strong>Actors:</strong> US targeting Venezuela (unconfirmed)</p>
         <p><strong>Criteria Category:</strong> [To be added]</p>
       </div>
-      <p>Venezuela has experienced some of the most severe infrastructure failures of any country in the Western Hemisphere over the past decade. The most significant was the March 2019 blackout, which left most of the country without power for days — including hospitals, water pumping stations, and food supply chains. President Nicolás Maduro attributed the outage to a US cyberattack on the Guri hydroelectric dam, the country's primary power source. Independent engineers and cybersecurity researchers largely pointed instead to chronic underinvestment, equipment degradation, and poor maintenance.</p>
-      <p>The dispute over attribution reflects a broader challenge: Venezuela's electrical infrastructure has been so severely neglected that distinguishing a deliberate cyberattack from ordinary systemic failure is genuinely difficult. Repeated blackouts have become normalized. The human cost is severe — patients on life support, food spoilage, water system failures — but the cause in any given incident is contested.</p>
-      <p>The January 2026 blackout is the most recent in this pattern. Details are still emerging, and independent verification of the cause remains limited. Whether or not a cyberattack was involved, Venezuela's infrastructure represents a case study in how deterioration and vulnerability compound each other — and how political context shapes the narrative around critical infrastructure failures.</p>
+      <p>On January 3, 2026, the US military captured Venezuelan President Nicolás Maduro. Caracas, Venezuela's capital, also entered a blackout. For most residents, it only lasted a few minutes. However, the areas surrounding the military compound where Maduro was captured experienced power outages up to three days.</p>
+      <p>Although the US has not claimed responsibility, President Trump made a reference to the cyberoperation: "It was dark, the lights of Caracas were largely turned off due to a certain expertise that we have, it was dark, and it was deadly."</p>
+      <p>In March 2019, Venezuela experienced a power outage attributed to the Guri hydroelectric plant in southeastern Venezuela. President Maduro blamed the US for attacking the Guri dam, and the US denied responsibility. The international discourse has been inconclusive; researchers have agreed that it could be a targeted cyberattack or a result of Venezuela's lack of investment in its infrastructure.</p>
+      <p>Previously, only Russia's hacker group Sandworm had caused blackouts through cyberattacks. While this is still under investigation, this cyberattack was a public display of precise and powerful cybercapabilities.</p>
       <button id="toggleSourcesBtn" class="view-sources-btn" onclick="toggleFootnotes()">View Sources</button>
       <div class="footnotes-wrapper" id="footnotesWrapper"><div class="footnotes"><ol>
-        <li>Kurmanaev, A. (2019). "Venezuela's Blackout, Explained." <em>New York Times.</em></li>
-        <li>Secureworks Counter Threat Unit. (2019). <em>Analysis of Venezuelan Power Grid Attack Claims.</em></li>
-        <li>Human Rights Watch. (2019). <em>Venezuela: Blackouts Endangering Lives.</em></li>
+        <li><a href="https://www.nytimes.com/2026/01/15/us/politics/cyberattack-venezuela-military.html" target="_blank">https://www.nytimes.com/2026/01/15/us/politics/cyberattack-venezuela-military.html</a></li>
+        <li><a href="https://www.wired.com/story/security-news-this-week-us-hackers-reportedly-caused-a-blackout-in-venezuela/" target="_blank">https://www.wired.com/story/security-news-this-week-us-hackers-reportedly-caused-a-blackout-in-venezuela/</a></li>
+        <li><a href="https://www.reuters.com/article/world/venezuela-blaming-us-for-six-day-blackout-orders-diplomats-to-leave-idUSKBN1QT25T/" target="_blank">https://www.reuters.com/article/world/venezuela-blaming-us-for-six-day-blackout-orders-diplomats-to-leave-idUSKBN1QT25T/</a></li>
       </ol></div></div>
     `,
 
